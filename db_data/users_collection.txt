@@ -1,0 +1,92 @@
+[
+  {
+    _id: ObjectId("64420633a1b5d50c8e30751a"),
+    user_email: 'johndoe1234@gmail.com',
+    user_details: {
+      user_name: 'John Doe',
+      user_password: 'password1',
+      user_flight: 'SQ120'
+    }
+  },
+  {
+    _id: ObjectId("64420633a1b5d50c8e30751b"),
+    user_email: 'maryjane5678@yahoo.com',
+    user_details: {
+      user_name: 'Mary Jane',
+      user_password: 'password2',
+      user_flight: 'CX115'
+    }
+  },
+  {
+    _id: ObjectId("64420633a1b5d50c8e30751c"),
+    user_email: 'davidbrown2468@hotmail.com',
+    user_details: {
+      user_name: 'David Brown',
+      user_password: 'password3',
+      user_flight: 'EK119'
+    }
+  },
+  {
+    _id: ObjectId("64420633a1b5d50c8e30751d"),
+    user_email: 'sarahsmith9012@outlook.com',
+    user_details: {
+      user_name: 'Sarah Smith',
+      user_password: 'password4',
+      user_flight: 'BA105'
+    }
+  },
+  {
+    _id: ObjectId("64420633a1b5d50c8e30751e"),
+    user_email: 'peterwilson3456@gmail.com',
+    user_details: {
+      user_name: 'Peter Wilson',
+      user_password: 'password5',
+      user_flight: 'EK119'
+    }
+  },
+  {
+    _id: ObjectId("644206c0a1b5d50c8e30751f"),
+    user_email: 'emma.williams@gmail.com',
+    user_details: {
+      user_name: 'Emma Williams',
+      user_password: 'p@ssw0rd123',
+      user_flight: null
+    }
+  },
+  {
+    _id: ObjectId("644206c0a1b5d50c8e307520"),
+    user_email: 'jacob.harris@yahoo.com',
+    user_details: {
+      user_name: 'Jacob Harris',
+      user_password: 'qwerty321',
+      user_flight: null
+    }
+  },
+  {
+    _id: ObjectId("644206c0a1b5d50c8e307521"),
+    user_email: 'lisa.rodriguez@hotmail.com',
+    user_details: {
+      user_name: 'Lisa Rodriguez',
+      user_password: 'secretp@ss',
+      user_flight: null
+    }
+  },
+  {
+    _id: ObjectId("644206c0a1b5d50c8e307522"),
+    user_email: 'peter.nguyen@outlook.com',
+    user_details: {
+      user_name: 'Peter Nguyen',
+      user_password: 'myP@ssw0rd',
+      user_flight: null
+    }
+  },
+  {
+    _id: ObjectId("644206c0a1b5d50c8e307523"),
+    user_email: 'kate.brown@gmail.com',
+    user_details: {
+      user_name: 'Kate Brown',
+      user_password: 'letmein123',
+      user_flight: null
+    }
+  }
+]
