@@ -1,0 +1,85 @@
+db.bookings.insertMany([
+     {
+		userEmail :  "emma.williams@gmail.com",
+		userFlights : ['BA205', 'AF206', 'UA207']
+	},
+	{
+		userEmail :  "jacob.harris@yahoo.com",
+		userFlights : [ 'EK208', 'AI209']
+	},
+	{
+		userEmail : "lisa.rodriguez@hotmail.com",
+		userFlights : ['AA215', 'AC216', 'JL217', 'QF218']
+	},
+		{
+		userEmail : "peter.nguyen@outlook.com",
+		userFlights : ['TK219', 'AA001', 'EK004']
+	},
+	{
+		userEmail : "kate.brown@gmail.com",
+        userFlights : ['AA215', 'BA216']
+	},
+	{
+		userEmail :  "john.doe@gmail.com",
+        userFlights : ['AF217', 'QF218', 'EK219']
+	},
+	{
+		userEmail :  "sarah.smith@yahoo.com",
+        userFlights : [ 'AA215', 'AF216']
+	},
+	{
+		userEmail :  "michael.nguyen@hotmail.com",
+        userFlights : [ 'TK217']
+	},
+		{
+		userEmail :  "jessica.johnson@outlook.com",
+        userFlights : [ 'AA301', 'BA302', 'FR303', 'KL304']
+	},
+	{
+		userEmail :  "adam.garcia@gmail.com",
+        userFlights : ['DL703', 'EK704', 'LH705', 'SQ706']
+	},
+	{
+		userEmail :  "natalie.baker@gmail.com",
+        userFlights : ['A601']
+	},
+		{
+		userEmail :  "ryan.jackson@yahoo.com", 
+		userFlights : [ AF603', 'UA604', 'EK605]
+	},
+	{
+		userEmail :  "alexandra.chen@hotmail.com",
+		userFlights : [ TK313', 'JL314', 'EY315']
+	},
+	{
+		userEmail :   "jason.hernandez@outlook.com",
+		userFlights : ['AF312', 'LH401']
+	},
+	{
+		userEmail :   "emma.miller@gmail.com",
+		userFlights : ['SU505', 'KL506', 'AB401']
+	},
+	{
+		userEmail :  "hannah.wilson@gmail.com",
+		userFlights : null
+	},
+	{
+		userEmail :   "david.kim@yahoo.com",
+		userFlights : null
+	},
+	{
+		userEmail :  "olivia.li@hotmail.com",
+		userFlights : null
+	},
+	{
+		userEmail : "joshua.young@outlook.com",
+		userFlights : null
+	},
+	{
+		userEmail :   "grace.davis@gmail.com",
+		userFlights : null
+	},
+	
+}
+	
+])

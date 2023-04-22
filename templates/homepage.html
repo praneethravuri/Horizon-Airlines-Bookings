@@ -24,11 +24,17 @@
     </header>
 
     <h1>Welcome, {{user_name}}</h1>
-    {% if user_flight %}
-    <p>Your flight: {{user_flight}}</p>
-    <p>Airline name: {{airline_name}}</p>
-    {% else %}
-    <p>You don't have any flights scheduled</p>
-    {% endif %}
+    <h1>List of Flights</h1>
+    <ul>
+      {% for key, value in user_flights_dict.items() %}
+        <li>Flight ID: {{key}}</li>
+        <li>Airline Name: {{user_flights_dict[key][0]}}</li>
+        <li>From Location: {{user_flights_dict[key][1] + user_flights_dict[key][2]}}</li>
+        <li>To Location: {{user_flights_dict[key][3] + user_flights_dict[key][4]}}</li>
+        <li>Departure Time: {{user_flights_dict[key][5]}}</li>
+        <li>Arrival Time: {{user_flights_dict[key][6]}}</li>
+        <li>Flight Duration: {{user_flights_dict[key][7]}}</li>
+      {% endfor %}
+    </ul>
 </body>
 </html>
