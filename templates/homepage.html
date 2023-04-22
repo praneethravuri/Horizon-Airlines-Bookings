@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <img src="./Mason Logos/GMU_PLogo_KO+Gold.png" alt="" class="gmu-logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Search Flights</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Welcome, {{user_name}}</h1>
+    {% if user_flight %}
+    <p>Your flight: {{user_flight}}</p>
+    <p>Airline name: {{airline_name}}</p>
+    {% else %}
+    <p>You don't have any flights scheduled</p>
+    {% endif %}
+</body>
+</html>
