@@ -22,22 +22,29 @@
             </ul>
         </nav>
     </header>
+    <div class="center-div">
+        <h1>Welcome, {{user_name}}</h1>
+    </div>
 
-    <h1>Welcome, {{user_name}}</h1>
-    <h1>List of Flights</h1>
-    <ul>
-      {% for key, value in user_flights_dict.items() %}
-        <li>Flight ID: {{key}}</li>
-        <li>Airline Name: {{user_flights_dict[key][0]}}</li>
-        <li>From Location: {{user_flights_dict[key][1] + " (" + user_flights_dict[key][2] + ")"}}</li>
-        <li>To Location: {{user_flights_dict[key][3] + " (" +  user_flights_dict[key][4] + ")"}}</li>
-        <li>Departure Time: {{user_flights_dict[key][5]}}</li>
-        <li>Arrival Time: {{user_flights_dict[key][6]}}</li>
-        <li>Flight Duration: {{user_flights_dict[key][7]}}</li>
-        <br>
-        <br>
-        <br>
-      {% endfor %}
-    </ul>
+    <div class="flight-bookings center-div">
+        <h1>Your Flight Bookings</h1>
+        <ul>
+          {% for key, value in user_flights_dict.items() %}
+          <br>
+          <br>
+            <li>Flight ID: {{key}}</li>
+            <li>Airline Name: {{user_flights_dict[key][0]}}</li>
+            <li>From Location: {{user_flights_dict[key][1] + " (" + user_flights_dict[key][2] + ")"}}</li>
+            <li>To Location: {{user_flights_dict[key][3] + " (" +  user_flights_dict[key][4] + ")"}}</li>
+            <li>Departure Time: {{user_flights_dict[key][5]}}</li>
+            <li>Arrival Time: {{user_flights_dict[key][6]}}</li>
+            <li>Flight Duration: {{user_flights_dict[key][7]}}</li>
+            <br>
+            <br>
+            <br>
+          {% endfor %}
+        </ul>
+    </div>
+
 </body>
 </html>

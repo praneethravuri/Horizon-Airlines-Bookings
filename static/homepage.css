@@ -7,3 +7,14 @@
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
+
+.center-div{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.flight-bookings ul li{
+    list-style: none;
+}
