@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 import secrets
 
@@ -32,7 +32,7 @@ def login():
         return redirect(url_for("homepage", user_name = user_name))
         
     else:
-        return 'Invalid credentials'
+        return render_template("login.html", error = "Invalid Credentials")
     
 @app.route("/homepage")
 def homepage():
