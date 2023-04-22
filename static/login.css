@@ -7,3 +7,39 @@
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
+
+header h1{
+    color: white;
+}
+
+.add-pad{
+    padding: 10px;
+}
+
+.login-card{
+    margin: auto;
+    width: 30%;
+    border: 2px solid whitesmoke;
+    padding: 10px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+input[type=email], input[type=password]{
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.email-title label, .password-title label{
+    text-align: left;
+}
+
+.login-btn button{
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
