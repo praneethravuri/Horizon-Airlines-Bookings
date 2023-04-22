@@ -8,6 +8,7 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['airportDB']
 users = db['users']
 flights = db["flights"]
+bookings = db["bookings"]
 
 @app.route('/')
 def index():
@@ -18,15 +19,20 @@ def login():
     email = request.form['email']
     password = request.form['password']
 
-    user = users.find_one({'user_email': email, 'user_details.user_password': password})
+    user = users.find_one({'userEmail': email, 'userDetails.userPassword': password})
 
     if user:
-        user_name = user["user_details"]["user_name"]
-        user_flight = user["user_details"]["user_flight"]
-        current_flight = flights.find_one({"flight_id" : user_flight})
-        if current_flight :
-            airline_name = current_flight["flight_details"]["airlineName"]
+        user_name = user["userDetails"]["userName"]
+        print(user_name)
+        print(email)
+        booking = bookings.find_one({"userEmail" : email})
+        if booking:
+            all_flights = booking["userFlights"]
+            print(all_flights)
+        user_flight = "tbd"
+        airline_name = "tbd"
         return redirect(url_for("homepage", user_name = user_name, user_flight = user_flight, airline_name = airline_name))
+        
     else:
         return 'Invalid credentials'
     
@@ -35,6 +41,7 @@ def homepage():
     user_name = request.args.get("user_name")
     user_flight = request.args.get("user_flight")
     airline_name = request.args.get("airline_name")
+    user_bookings = request.args.get("user_bookings")
     return render_template("homepage.html", user_name = user_name, user_flight = user_flight, airline_name = airline_name)
 
 if __name__ == '__main__':
