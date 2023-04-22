@@ -44,8 +44,6 @@ def homepage():
     for flight in user_flights:
         find_flight = flights.find_one({"flight_id" : flight})
         user_flights_dict[find_flight["flight_id"]] = [find_flight["flight_details"]["airlineName"], find_flight["flight_details"]["fromLocation"], find_flight["flight_details"]["fromLocationAirportCode"],find_flight["flight_details"]["toLocation"], find_flight["flight_details"]["toLocationAirportCode"],find_flight["flight_details"]["departureTime"], find_flight["flight_details"]["arrivalTime"], find_flight["flight_details"]["duration"], find_flight["flight_details"]["totalSeats"] ]
-
-    print(user_flights_dict)
     return render_template("homepage.html", user_name = user_name, user_flights_dict = user_flights_dict)
 
 if __name__ == '__main__':
