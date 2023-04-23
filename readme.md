@@ -1,5 +1,6 @@
 ### Create virtual environment
 
+Delete ```env`` folder if it is already present in the project folder
 ```python -m venv env```
 
 ### Install necessary libraries
