@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/footer.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Homepage</title>
 </head>
 <body>
 
-    <header>
-        <h1>Horizon Airlines</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Bookings</a></li>
-                <li><a href="#">Search Flights</a></li>
-                <li><a href="#">Hotels</a></li>
-                <li><a href="{{ url_for('login') }}">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include "nav-bar.html" %}
     <div class="center-div">
         <h1>Welcome, {{user_name}}</h1>
     </div>
@@ -77,6 +67,7 @@
         </div>
     </section>
 
+    {% include "footer.html" %}
 
 </body>
 </html>

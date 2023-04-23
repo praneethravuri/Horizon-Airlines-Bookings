@@ -41,5 +41,13 @@ def login():
     else:
         return render_template("login.html", error = "Invalid Credentials")
     
+@app.route("/search-flights")
+def search_flights():
+    return render_template("flights.html")
+
+@app.route("/search-hotels")
+def search_hotels():
+    pass
+    
 if __name__ == '__main__':
     app.run(debug=True)
