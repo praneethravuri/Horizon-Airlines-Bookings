@@ -19,6 +19,9 @@ app.register_blueprint(homepage_bp)
 from routes.flights import flights_bp
 app.register_blueprint(flights_bp)
 
+from routes.login import login_bp
+app.register_blueprint(login_bp)
+
 #from routes.login import 
 
 # Import and register other blueprints here
