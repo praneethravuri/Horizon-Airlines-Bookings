@@ -11,4 +11,6 @@ bookings = db["bookings"]
 
 @flights_bp.route("/search-flights")
 def search_flights():
+    user_email = session.get("user_email")
+    print(user_email)
     return render_template("flights.html")

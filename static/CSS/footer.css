@@ -1,9 +1,4 @@
 footer{
-    background-color: rgb(0, 51, 102);
-    height: 50px;
-    text-align: center;
-    color: whitesmoke;
-    font-weight: bold;
     position: absolute;
     bottom: 0;
     width: 100%;

@@ -1,20 +1,20 @@
-### Create virtual environment
+### 1. Create virtual environment
 
 Delete ```env``` folder if it is already present in the project folder
 
 ```python -m venv env```
 
-### Install necessary libraries
+### 2. Install necessary libraries
 
 ```pip install flask pymongo```
 
-### Go to services and check if MongoDB is running
+### 3. Go to services and check if MongoDB is running
 
-### Initialize the MongoDB in Command Prompt
+### 4. Initialize the MongoDB in Command Prompt
 
 ```mongod```
 
-### In the virtual environment, run app.py
+### 5. In the virtual environment, run app.py
 
 ```python app.py```
 

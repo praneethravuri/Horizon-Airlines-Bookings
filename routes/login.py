@@ -20,11 +20,11 @@ def login():
     if user:
         user_name = user["userDetails"]["userName"]
         booking = bookings.find_one({"userEmail" : email})
+        session["user_email"] = email
         if booking:
             user_flights = booking["userFlights"]
-            
             session["user_flights"] = user_flights
-            return redirect(url_for("homepage.homepage", user_name = user_name))
+            return redirect(url_for("homepage.homepage", user_name = user_name, user_email = email))
         else:
             return render_template("homepage.html", error = "No Bookings")
         
