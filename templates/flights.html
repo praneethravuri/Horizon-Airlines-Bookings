@@ -7,15 +7,89 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/footer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/flights.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
     <title>Search Flights - Horizon Airlines</title>
 </head>
 <body>
 
     {% include "nav-bar.html" %}
 
-    <section class="search-flights-section">
-        <div class="search-flights">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor omnis, debitis quibusdam autem ipsum quae atque illo at voluptas veniam.</p>
+    <section class="main-content add-pad">
+
+        <div class="flight-bookings">
+            <div class="flight-bookings-title">
+                <h1 class="add-pad">Your Flight Bookings</h1>
+            </div>
+
+            <div class="search-form">
+                <form method="POST" action="{{ url_for('flights.search_flights') }}">
+                    <label for="from_locations">From: </label>
+                    <select name="from_location" id="from_locations">
+                        <option value="">None</option>
+                        {% for loc in from_locations %}
+                        <option value="{{loc}}">{{loc}}</option>
+                        {% endfor %}
+                    </select>
+                
+                    <label for="to_locations">To: </label>
+                    <select name="to_location" id="to_locations">
+                        <option value="">None</option>
+                        {% for loc in to_locations %}
+                        <option value="{{loc}}">{{loc}}</option>
+                        {% endfor %}
+                    </select>
+                
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <h3>{{search_message}}</h3>
+
+            {% if all_flights != [] %}
+            <div class="flights-table">
+                {% for f in all_flights %}
+                <table class="add-pad dynamic-table" style="margin-top: 10px;">
+                    <tr>
+                        <td class="add-bold">Flight ID: </td>
+                        <td>{{f["flight_id"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Airline Name: </td>
+                        <td>{{f["airlineName"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">From Location: </td>
+                        <td>{{f["fromLocation"] + " (" + f["fromLocationAirportCode"] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">To Location: </td>
+                        <td>{{f["toLocation"] + " (" + f["toLocationAirportCode"] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Departure Date & Time: </td>
+                        <td>{{f["departureTime"][0: 10] + " | " + f["departureTime"][11: 19]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Arrival Date & Time: </td>
+                        <td>{{f["arrivalTime"][0: 10] + " | " + f["arrivalTime"][11: 19]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Flight Duration: </td>
+                        <td>{{f["duration"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold"></td>
+                        <td><button>Add Flight</button></td>
+                    </tr>
+                </table>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-bookings-message">
+                <h1>No flights available</h1>
+            </div>
+            {% endif %}
+            </div>
         </div>
     </section>
 

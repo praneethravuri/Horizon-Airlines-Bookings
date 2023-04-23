@@ -18,3 +18,26 @@
 .search-flights{
     margin: 30px;
 }
+
+.search-form{
+    padding: 20px;
+}
+
+.search-form label{
+    font-weight: bold;
+}
+
+.search-form select{
+    padding: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.search-form button{
+    padding: 5px;
+    background-color: blue;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
