@@ -14,14 +14,14 @@ bookings = db["bookings"]
 def homepage():
     user_name = request.args.get("user_name")
     user_flights = session.get("user_flights")
-    if user_flights is None:
+    if user_flights == []:
         user_flights_dict = {}
 
     else:
         user_flights_dict = {}
         def split_time(time_):
             time_ = time_.split("T")
-            return time_[0] + " " + time_[1][0:-1]
+            return time_[0] + " | " + time_[1][0:-1]
 
         for flight in user_flights:
             find_flight = flights.find_one({"flight_id" : flight})

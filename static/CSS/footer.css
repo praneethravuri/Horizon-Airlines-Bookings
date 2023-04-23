@@ -4,4 +4,12 @@ footer{
     text-align: center;
     color: whitesmoke;
     font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; 
+}
+
+footer p{
+    margin-top: 10px;
 }
