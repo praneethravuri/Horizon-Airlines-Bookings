@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from pymongo import MongoClient
 import secrets
 from routes.homepage import homepage_bp
+from routes.flights import flights_bp
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = secrets.token_hex(16)
@@ -15,6 +16,7 @@ bookings = db["bookings"]
 
 # Register the homepage blueprint
 app.register_blueprint(homepage_bp)
+app.register_blueprint(flights_bp)
 
 @app.route('/')
 def index():
@@ -41,9 +43,9 @@ def login():
     else:
         return render_template("login.html", error = "Invalid Credentials")
     
-@app.route("/search-flights")
-def search_flights():
-    return render_template("flights.html")
+#@app.route("/search-flights")
+#def search_flights():
+#    return render_template("flights.html")
 
 @app.route("/search-hotels")
 def search_hotels():
