@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
     <title>Document</title>
 </head>
 <body>
 
     <header>
-        <img src="./Mason Logos/GMU_PLogo_KO+Gold.png" alt="" class="gmu-logo">
+        <h1>Horizon Airlines</h1>
         <nav>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Bookings</a></li>
                 <li><a href="#">Search Flights</a></li>
                 <li><a href="#">Hotels</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="{{ url_for('login') }}">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -26,25 +26,50 @@
         <h1>Welcome, {{user_name}}</h1>
     </div>
 
-    <div class="flight-bookings center-div">
-        <h1>Your Flight Bookings</h1>
-        <ul>
-          {% for key, value in user_flights_dict.items() %}
-          <br>
-          <br>
-            <li>Flight ID: {{key}}</li>
-            <li>Airline Name: {{user_flights_dict[key][0]}}</li>
-            <li>From Location: {{user_flights_dict[key][1] + " (" + user_flights_dict[key][2] + ")"}}</li>
-            <li>To Location: {{user_flights_dict[key][3] + " (" +  user_flights_dict[key][4] + ")"}}</li>
-            <li>Departure Time: {{user_flights_dict[key][5]}}</li>
-            <li>Arrival Time: {{user_flights_dict[key][6]}}</li>
-            <li>Flight Duration: {{user_flights_dict[key][7]}}</li>
-            <br>
-            <br>
-            <br>
-          {% endfor %}
-        </ul>
-    </div>
+    <section class="main-content add-pad">
+
+        <div class="flight-bookings">
+            <div class="flight-bookings-title">
+                <h1 class="add-pad">Your Flight Bookings</h1>
+            </div>
+            <div class="flights-table">
+                {% for key, value in user_flights_dict.items() %}
+                <table class="add-pad dynamic-table" style="margin-top: 10px;">
+                    <tr>
+                        <td class="add-bold">Flight ID: </td>
+                        <td>{{key}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Airline Name: </td>
+                        <td>{{value[0]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">From Location: </td>
+                        <td>{{value[1] + " (" + value[2] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">To Location: </td>
+                        <td>{{value[3] + " (" + value[4] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Departure Date & Time: </td>
+                        <td>{{value[5]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Arrival Date & Time: </td>
+                        <td>{{value[6]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Flight Duration: </td>
+                        <td>{{value[7]}}</td>
+                    </tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </section>
 
 </body>
 </html>

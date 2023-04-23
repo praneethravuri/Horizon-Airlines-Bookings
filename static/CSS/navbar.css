@@ -14,7 +14,7 @@
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
-    background-color: #1F2D5A;
+    background-color: rgb(0, 51, 102);
     color: whitesmoke;
 }
 
@@ -22,12 +22,12 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
-    background-color: #1F2D5A;
+    background-color: rgb(0, 51, 102);
     color: whitesmoke;
 }
 
 .nav-links ul{
-    background-color: red;
+    background-color: rgb(255, 153, 102);
 }
 
 header{
@@ -35,13 +35,17 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px 10% 10px 10%;
-    background-color:  #1F2D5A;
+    background-color:  rgb(0, 51, 102);
     border-bottom: 5px solid whitesmoke;
+}
+
+header h1{
+    color: whitesmoke
 }
 
 .nav-links{
     list-style: none;
-    background-color: #1F2D5A;
+    background-color: rgb(0, 51, 102);
 
 }
 
@@ -50,15 +54,13 @@ header{
     padding: 0px 20px;
 }
 
-.nav-links li a{
-    transition: all 0.3s ease 0s;
-}
-
 .nav-links li a:hover{
     color: whitesmoke;
+    text-decoration: underline;
+    transition: all 0.3s ease 0s;
 }
 
 header img{
     width: 10%;
-    background-color:  #1F2D5A;
+    background-color:  rgb(0, 51, 102);
 }

@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<title>Horizon Airlines</title>
 </head>
@@ -57,7 +57,7 @@
 	</div>
 
 	{% if error %}
-    <script src="../static/invalidCredentials.js"></script>
+    <script src="../static/JS/invalidCredentials.js"></script>
 	{% endif %}
 </body>
 </html>
