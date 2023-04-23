@@ -55,3 +55,10 @@
     width: 100%;
     text-align: left;
 }
+
+.no-bookings-message{
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  padding: 70px;
+  margin-top: 30px;
+}

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Homepage</title>
 </head>
 <body>
 
@@ -32,6 +33,7 @@
             <div class="flight-bookings-title">
                 <h1 class="add-pad">Your Flight Bookings</h1>
             </div>
+            {% if has_bookings %}
             <div class="flights-table">
                 {% for key, value in user_flights_dict.items() %}
                 <table class="add-pad dynamic-table" style="margin-top: 10px;">
@@ -66,10 +68,15 @@
                 </table>
                 {% endfor %}
             </div>
+            {% else %}
+            <div class="no-bookings-message">
+                <h1>You don't have any bookings</h1>
+            </div>
+            {% endif %}
+            </div>
         </div>
-
-
     </section>
+
 
 </body>
 </html>
