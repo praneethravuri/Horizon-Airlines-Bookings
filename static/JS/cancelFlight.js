@@ -6,7 +6,7 @@ $(document).ready(function() {
             $.post('/delete-flight', {
                 flight_id: flight_id
             }).done(function() {
-                location.reload();
+                $("#table-" + flight_id).hide();
             });
         }
     });

@@ -54,4 +54,9 @@ section{
     font-weight: bold;
     border: 2px solid whitesmoke;
     border-radius: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.add-flight-btn:hover{
+    background-color: darkgreen;
 }

@@ -76,5 +76,11 @@
   background-color: red;
   color: whitesmoke;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cancel-btn:hover{
+  background-color: darkred;
 }
 
