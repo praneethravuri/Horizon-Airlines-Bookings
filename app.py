@@ -1,15 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 import secrets
-from flask_caching import Cache
 from routes.homepage import homepage_bp
 from routes.flights import flights_bp
 from routes.login import login_bp
+from routes.account import account_bp
 
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = secrets.token_hex(16)
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Connect to the MongoDB database
 client = MongoClient('mongodb://localhost:27017/')
@@ -22,6 +21,7 @@ bookings = db["bookings"]
 app.register_blueprint(homepage_bp)
 app.register_blueprint(flights_bp)
 app.register_blueprint(login_bp)
+app.register_blueprint(account_bp)
 
 @app.route('/')
 def index():

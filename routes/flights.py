@@ -47,3 +47,16 @@ def search_flights():
         all_flights.append(flight_details)
 
     return render_template("flights.html", from_locations = from_locations, to_locations = to_locations, submit_clicked = submit_clicked, all_flights = all_flights, search_message = search_message)
+
+@flights_bp.route("/add-flight", methods=['POST'])
+def add_flight():
+    to_be_added_flight = request.form['flight_id']
+    user_email = session.get("user_email")
+    user = bookings.find_one({"userEmail" : user_email})
+    user_flights = user["userFlights"]
+    if to_be_added_flight in user_flights:
+        print("Not possible")
+    else:
+        user_flights.append(to_be_added_flight)
+        bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
+    return redirect(url_for('flights.search_flights'))

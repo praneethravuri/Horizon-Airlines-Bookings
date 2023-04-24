@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/account.css') }}">
+    <title>Account - Horizon Airlines</title>
+</head>
+<body>
+    {% include "nav-bar.html" %}
+    
+    <section>
+        <div class="user-account add-pad">
+            <div id="acc-img">
+                <img src="../static/images/round-account-button-with-user-inside.png" alt="">
+            </div>
+
+            <div class="user-details">
+                <table class="user-details-table add-pad">
+                    <tr>
+                        <td class="add-pad">Name</td>
+                        <td class="add-pad">test</td>
+                        <td class="add-pad">Update name</td>
+                    </tr>
+                    <tr>
+                        <td class="add-pad">Email</td>
+                        <td class="add-pad">test@gmail.com</td>
+                        <td class="add-pad">Update Email</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

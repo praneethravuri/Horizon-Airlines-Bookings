@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/footer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/flights.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Search Flights - Horizon Airlines</title>
 </head>
 <body>
@@ -79,7 +80,7 @@
                     </tr>
                     <tr>
                         <td class="add-bold"></td>
-                        <td><button class="add-flight-btn">Add Flight</button></td>
+                        <td><button class="add-flight-btn" id="{{f['flight_id']}}">Add Flight - {{f["flight_id"]}}</button></td>
                     </tr>
                 </table>
                 {% endfor %}
@@ -153,5 +154,6 @@
         -->
     </section>
 
+    <script src="../static/JS/addFlight.js"></script>
 </body>
 </html>
