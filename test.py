@@ -7,5 +7,7 @@ users = db['users']
 flights = db["flights"]
 bookings = db["bookings"]
 
+i = 1
 for user in users.find({}, {'userEmail': 1, 'userDetails.userPassword': 1}):
-    print("Email: " + user["userEmail"] + "\n" + "Password: " + user["userDetails"]["userPassword"] + "\n\n")
+    print(str(i) + ") Email: " + user["userEmail"] + "\n" + "Password: " + user["userDetails"]["userPassword"] + "\n\n")
+    i+=1

@@ -43,77 +43,77 @@ Delete ```env``` folder if it is already present in the project folder
 
 ### Database users and passwords
 ```
-Email: emma.williams@gmail.com
+1) Email: emma.williams@gmail.com
 Password: p@ssw0rd123
 
 
-Email: jacob.harris@yahoo.com    
+2) Email: jacob.harris@yahoo.com    
 Password: qwerty321
 
 
-Email: lisa.rodriguez@hotmail.com
+3) Email: lisa.rodriguez@hotmail.com
 Password: secretp@ss
 
 
-Email: peter.nguyen@outlook.com  
+4) Email: peter.nguyen@outlook.com  
 Password: myP@ssw0rd
 
 
-Email: kate.brown@gmail.com      
+5) Email: kate.brown@gmail.com      
 Password: letmein123
 
 
-Email: john.doe@gmail.com
+6) Email: john.doe@gmail.com
 Password: mySecretPassword123
 
 
-Email: sarah.smith@yahoo.com
+7) Email: sarah.smith@yahoo.com
 Password: ilovecookies
 
 
-Email: michael.nguyen@hotmail.com
+8) Email: michael.nguyen@hotmail.com
 Password: S3cretP@ss
 
 
-Email: jessica.johnson@outlook.com
+9) Email: jessica.johnson@outlook.com
 Password: mypassword1234
 
 
-Email: adam.garcia@gmail.com
+10) Email: adam.garcia@gmail.com
 Password: P@ssw0rd!
 
 
-Email: ryan.jackson@yahoo.com
+11) Email: ryan.jackson@yahoo.com
 Password: g1vem3access!
 
 
-Email: alexandra.chen@hotmail.com
+12) Email: alexandra.chen@hotmail.com
 Password: il0ve2dance
 
 
-Email: jason.hernandez@outlook.com
+13) Email: jason.hernandez@outlook.com
 Password: m1ndth3gap
 
 
-Email: emma.miller@gmail.com
+14) Email: emma.miller@gmail.com
 Password: th1nkpositive
 
 
-Email: hannah.wilson@gmail.com
+15) Email: hannah.wilson@gmail.com
 Password: p@ssw0rd456
 
 
-Email: david.kim@yahoo.com
+16) Email: david.kim@yahoo.com
 Password: myP@ssword
 
-Email: olivia.li@hotmail.com
+17) Email: olivia.li@hotmail.com
 Password: letmein12
 
 
-Email: joshua.young@outlook.com
+18) Email: joshua.young@outlook.com
 Password: p@ssword123
 
 
-Email: grace.davis@gmail.com
+19) Email: grace.davis@gmail.com
 Password: m0t1vat3d!
 ```
