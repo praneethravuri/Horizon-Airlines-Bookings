@@ -55,6 +55,10 @@
                         <td class="add-bold">Flight Duration: </td>
                         <td>{{value[7]}}</td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td><button id="{{key}}" class="cancel-btn">Cancel Flight - {{key}}</button></td>
+                    </tr>
                 </table>
                 {% endfor %}
             </div>
@@ -68,6 +72,6 @@
     </section>
 
     <!--{% include "footer.html" %} -->
-
+    <script src="../static/JS/deleteFile.js"></script>
 </body>
 </html>

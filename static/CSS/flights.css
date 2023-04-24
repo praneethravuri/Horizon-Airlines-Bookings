@@ -41,3 +41,12 @@
     border: 2px solid whitesmoke;
     border-radius: 5px;
 }
+
+.add-flight-btn{
+    padding: 5px;
+    background-color: green;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}

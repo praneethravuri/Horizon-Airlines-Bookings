@@ -67,3 +67,14 @@
   position: relative;
   min-height: 100vh;
 }
+
+.cancel-btn{
+  margin-top: 10px;
+  padding: 5px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  background-color: red;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
