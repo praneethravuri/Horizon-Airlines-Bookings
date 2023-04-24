@@ -19,6 +19,11 @@
     margin: 30px;
 }
 
+section{
+    display: flex;
+    
+}
+
 .search-form{
     padding: 20px;
 }

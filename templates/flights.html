@@ -91,8 +91,66 @@
             {% endif %}
             </div>
         </div>
+
+
+
+
+
+
+
+
+        <div class="flight-bookings">
+            <div class="flight-bookings-title">
+                <h1 class="add-pad">Your Current Flight Bookings</h1>
+            </div>
+
+            {% if all_flights != [] %}
+            <div class="flights-table">
+                {% for f in all_flights %}
+                <table class="add-pad dynamic-table" style="margin-top: 10px;">
+                    <tr>
+                        <td class="add-bold">Flight ID: </td>
+                        <td>{{f["flight_id"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Airline Name: </td>
+                        <td>{{f["airlineName"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">From Location: </td>
+                        <td>{{f["fromLocation"] + " (" + f["fromLocationAirportCode"] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">To Location: </td>
+                        <td>{{f["toLocation"] + " (" + f["toLocationAirportCode"] + ")"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Departure Date & Time: </td>
+                        <td>{{f["departureTime"][0: 10] + " | " + f["departureTime"][11: 19]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Arrival Date & Time: </td>
+                        <td>{{f["arrivalTime"][0: 10] + " | " + f["arrivalTime"][11: 19]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold">Flight Duration: </td>
+                        <td>{{f["duration"]}}</td>
+                    </tr>
+                    <tr>
+                        <td class="add-bold"></td>
+                        <td><button class="add-flight-btn">Add Flight</button></td>
+                    </tr>
+                </table>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-bookings-message">
+                <h1>You have not selected any flight</h1>
+            </div>
+            {% endif %}
+            </div>
+        </div>
     </section>
 
-    <!--{% include "footer.html" %}-->
 </body>
 </html>
