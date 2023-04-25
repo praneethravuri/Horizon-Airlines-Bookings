@@ -25,6 +25,9 @@ app.register_blueprint(login_bp)
 from routes.account import account_bp
 app.register_blueprint(account_bp)
 
+from routes.payment import payment_bp
+app.register_blueprint(payment_bp)
+
 #from routes.login import 
 
 # Import and register other blueprints here

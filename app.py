@@ -5,6 +5,7 @@ from routes.homepage import homepage_bp
 from routes.flights import flights_bp
 from routes.login import login_bp
 from routes.account import account_bp
+from routes.payment import payment_bp
 
 
 app = Flask(__name__, template_folder='templates')
@@ -22,15 +23,11 @@ app.register_blueprint(homepage_bp)
 app.register_blueprint(flights_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(account_bp)
+app.register_blueprint(payment_bp)
 
 @app.route('/')
 def index():
     return render_template('login.html')
-
-
-@app.route("/search-hotels")
-def search_hotels():
-    pass
     
 if __name__ == '__main__':
     app.run(debug=True)
