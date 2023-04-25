@@ -8,6 +8,9 @@ $(document).ready(function(){
                 if (response && response['error'] == "booked") {
                     document.getElementsByClassName('flight-already-booked')[0].style.display = 'block';
                 }
+                else if(response){
+                    window.location.href = "payment.html";
+                }
             });
         }
     })

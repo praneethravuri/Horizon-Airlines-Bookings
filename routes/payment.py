@@ -10,6 +10,6 @@ users = db['users']
 flights = db["flights"]
 bookings = db["bookings"]
 
-@payment_bp.route("/login")
+@payment_bp.route("/payment")
 def payment():
     return render_template("payment.html")
