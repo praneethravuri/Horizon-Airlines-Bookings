@@ -60,3 +60,14 @@ section{
 .add-flight-btn:hover{
     background-color: darkgreen;
 }
+
+.flight-already-booked{
+    background-color: rgb(235, 112, 112);
+    padding: 10px;
+    text-align: center;
+}
+
+.flight-already-booked p{
+    color: whitesmoke;
+    font-weight: bold;
+}

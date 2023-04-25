@@ -4,8 +4,10 @@ $(document).ready(function(){
         if(confirm("Are you sure you want to book this flight?")){
             $.post('/add-flight', {
                 flight_id: flight_id
-            }).done(function() {
-                console.log("sent message");
+            }).done(function(response) {
+                if (response && response['error'] == "booked") {
+                    document.getElementsByClassName('flight-already-booked')[0].style.display = 'block';
+                }
             });
         }
     })

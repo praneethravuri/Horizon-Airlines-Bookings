@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 
 flights_bp = Blueprint('flights', __name__)
@@ -54,8 +54,11 @@ def add_flight():
     user_email = session.get("user_email")
     user = bookings.find_one({"userEmail" : user_email})
     user_flights = user["userFlights"]
+    error = "not_possible"
     if to_be_added_flight in user_flights:
-        print("Not possible")
+        error = "Flight already booked!"
+        print(error)
+        return {"error": "booked"}
     else:
         user_flights.append(to_be_added_flight)
         bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
