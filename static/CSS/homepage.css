@@ -83,3 +83,11 @@
 .cancel-btn:hover{
   background-color: darkred;
 }
+
+.show-cancel-flight{
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(235, 112, 112);
+  color: white;
+  font-weight: bold;
+}
