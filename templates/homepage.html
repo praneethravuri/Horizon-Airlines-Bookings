@@ -13,6 +13,11 @@
 <body>
 
     {% include "nav-bar.html" %}
+
+    {% if new_user %}
+    <p>New user</p>
+    {% endif %}
+
     <div class="center-div">
         <h1>Welcome, {{user_name}}</h1>
     </div>

@@ -48,6 +48,6 @@ def signup():
 
         database.bookings.insert_one(booking)
 
-        return redirect(url_for('homepage.homepage', user_name=name, user_email=email))
+        return redirect(url_for('homepage.homepage', user_name=name, user_email=email, new_user = True))
     else:
         return render_template('signup.html')
