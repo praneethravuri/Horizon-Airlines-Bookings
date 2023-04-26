@@ -1,25 +1,33 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from pymongo import MongoClient
 
-login_bp = Blueprint('login', __name__)
+class Database:
+    _instance = None
 
-# Connect to the MongoDB database
-client = MongoClient('mongodb://localhost:27017/')
-db = client['airportDB']
-users = db['users']
-flights = db["flights"]
-bookings = db["bookings"]
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.client = MongoClient('mongodb://localhost:27017/')
+            cls._instance.db = cls._instance.client['airportDB']
+            cls._instance.users = cls._instance.db['users']
+            cls._instance.flights = cls._instance.db['flights']
+            cls._instance.bookings = cls._instance.db['bookings']
+        return cls._instance
+
+database = Database()
+
+login_bp = Blueprint('login', __name__)
 
 @login_bp.route("/login", methods=['POST'])
 def login():
     email = request.form['email']
     password = request.form['password']
 
-    user = users.find_one({'userEmail': email, 'userDetails.userPassword': password})
+    user = database.users.find_one({'userEmail': email, 'userDetails.userPassword': password})
 
     if user:
         user_name = user["userDetails"]["userName"]
-        booking = bookings.find_one({"userEmail" : email})
+        booking = database.bookings.find_one({"userEmail" : email})
         session["user_email"] = email
         if booking:
             user_flights = booking["userFlights"]

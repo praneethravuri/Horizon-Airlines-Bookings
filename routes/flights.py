@@ -1,20 +1,29 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, session
 from pymongo import MongoClient
 
-flights_bp = Blueprint('flights', __name__)
+class Database:
+    _instance = None
 
-client = MongoClient('mongodb://localhost:27017/')
-db = client['airportDB']
-users = db['users']
-flights = db["flights"]
-bookings = db["bookings"]
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.client = MongoClient('mongodb://localhost:27017/')
+            cls._instance.db = cls._instance.client['airportDB']
+            cls._instance.users = cls._instance.db['users']
+            cls._instance.flights = cls._instance.db['flights']
+            cls._instance.bookings = cls._instance.db['bookings']
+        return cls._instance
+
+database = Database()
+
+flights_bp = Blueprint('flights', __name__)
 
 @flights_bp.route("/search-flights", methods=["GET", "POST"])
 def search_flights():
     user_email = session.get("user_email")
 
-    from_locations = list(flights.distinct("flight_details.fromLocation"))
-    to_locations = list(flights.distinct("flight_details.toLocation"))
+    from_locations = list(database.flights.distinct("flight_details.fromLocation"))
+    to_locations = list(database.flights.distinct("flight_details.toLocation"))
 
     from_location_user = ""
     to_location_user = ""
@@ -30,13 +39,13 @@ def search_flights():
     search_message = ""
 
     if from_location_user == "":
-        searched_flights = flights.find({"flight_details.toLocation" : to_location_user})
+        searched_flights = database.flights.find({"flight_details.toLocation" : to_location_user})
         search_message = f"Showing flights to {to_location_user}"
     elif to_location_user == "":
-        searched_flights = flights.find({"flight_details.fromLocation" : from_location_user})
+        searched_flights = database.flights.find({"flight_details.fromLocation" : from_location_user})
         search_message = f"Showing flights from {from_location_user}"
     elif from_location_user != "" and to_location_user != "":
-        searched_flights = flights.find({"flight_details.fromLocation" : from_location_user, "flight_details.toLocation" : to_location_user})
+        searched_flights = database.flights.find({"flight_details.fromLocation" : from_location_user, "flight_details.toLocation" : to_location_user})
         search_message = f"Showing flights from {from_location_user} to {to_location_user}"
 
     all_flights = []
@@ -52,7 +61,7 @@ def search_flights():
 def add_flight():
     to_be_added_flight = request.form['flight_id']
     user_email = session.get("user_email")
-    user = bookings.find_one({"userEmail" : user_email})
+    user = database.bookings.find_one({"userEmail" : user_email})
     user_flights = user["userFlights"]
     error = "not_possible"
     if to_be_added_flight in user_flights:
