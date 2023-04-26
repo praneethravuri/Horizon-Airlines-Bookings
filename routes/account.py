@@ -42,6 +42,7 @@ def delete_account():
     print(user_email)
     print("here")
     result = database.users.delete_one({"userEmail": user_email})
+    del_bookings = database.bookings.delete_many({"userEmail": user_email})
     print("Account deleted")
     print(result.deleted_count)
     return render_template("login.html")
