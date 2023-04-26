@@ -25,11 +25,17 @@ def account():
 
     find_user_details = database.users.find({'userEmail': user_email})
     user_name = ""
-    # Iterate through the cursor
     for user_details in find_user_details:
         user_name = user_details['userDetails']['userName']
         break
-
-    
-
     return render_template("account.html", user_email = user_email, user_name = user_name)
+
+@account_bp.route("/delete-account", methods=['POST'])
+def delete_account():
+    user_email = session.get("user_email")
+    print(user_email)
+    print("here")
+    result = database.users.delete_one({"userEmail": user_email})
+    print("Account deleted")
+    print(result.deleted_count)
+    return render_template("login.html")

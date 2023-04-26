@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/account.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Account - Horizon Airlines</title>
 </head>
 <body>
@@ -28,13 +29,16 @@
                         <td class="add-pad">{{user_email}}</td>
                     </tr>
                     <tr>
-                        <td class="add-pad add-bold"><button class="delete-account add-bold">Delete Account</button></td>
+                        <td class="add-pad add-bold">
+                            <button class="add-bold" id="delete-account">Delete Account</button></td>
                         <td class="add-pad add-bold"><button class="update-details add-bold">Update Details</button></td>
                     </tr>
                 </table>
             </div>
         </div>
     </section>
+
+    <script src="../static/JS/deleteAccount.js"></script>
 
 </body>
 </html>
