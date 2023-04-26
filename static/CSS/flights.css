@@ -8,20 +8,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.search-flights-section{
-    width: 50%;
-    border: 2px solid whitesmoke;
-    border-radius: 5px;
-    margin-top: 30px;
-}
-
-.search-flights{
-    margin: 30px;
-}
-
 section{
     display: flex;
-    
 }
 
 .search-form{

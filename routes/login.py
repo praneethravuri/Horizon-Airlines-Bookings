@@ -23,9 +23,12 @@ def login():
     email = request.form['email']
     password = request.form['password']
 
+    print(f"\n\nEntered email : {email} \nEntered password : {password} \n\n")
+
     user = database.users.find_one({'userEmail': email, 'userDetails.userPassword': password})
 
     if user:
+        print("\nFound user in the database")
         user_name = user["userDetails"]["userName"]
         booking = database.bookings.find_one({"userEmail" : email})
         session["user_email"] = email
