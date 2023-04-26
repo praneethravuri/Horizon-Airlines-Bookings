@@ -47,6 +47,8 @@ def search_flights():
     elif from_location_user != "" and to_location_user != "":
         searched_flights = database.flights.find({"flight_details.fromLocation" : from_location_user, "flight_details.toLocation" : to_location_user})
         search_message = f"Showing flights from {from_location_user} to {to_location_user}"
+    elif from_location_user == "" and to_location_user == "":
+        search_message = ""
 
     all_flights = []
 
@@ -69,6 +71,9 @@ def add_flight():
         print(error)
         return {"error": "booked"}
     else:
+        user_flights.append(to_be_added_flight)
+        database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
+        print("Added flight details to the user's bookings")
         return {"flight_id" : to_be_added_flight}
 
 
