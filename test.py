@@ -11,9 +11,12 @@ discount = db["discount"]
 
 airline_names = flights.distinct("flight_details.airlineName")
 
-dic = {}
+i = 0
+for air in airline_names:
+    print("db.discount.insertOne({" + '"' + air + '"' + ":" + "{government: " + str(random.randint(0, 70)) + ",student: " + str(random.randint(0, 70)) +",privateSector: " + str(random.randint(0, 70)) +",unemployed: " + str(random.randint(0, 70)) +",business: " + str(random.randint(0, 70))  + "}})")
+    print("\n")
 
-for i in airline_names:
-    dic[i] = {"governmentDiscount" : random.randint(1, 7) * 10, "studentDiscount" : random.randint(1, 7) * 10}
+result = discount.find_one({'Qantas Airways.privateSector': 1})
 
-discount.insert_one(dic)
+# print the value of privateSector
+print(result['Qantas Airways']['privateSector'])

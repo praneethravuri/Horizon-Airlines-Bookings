@@ -71,10 +71,12 @@ def add_flight():
         print(error)
         return {"error": "booked"}
     else:
-        user_flights.append(to_be_added_flight)
-        database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
-        print("Added flight details to the user's bookings")
-        return {"flight_id" : to_be_added_flight}
+        #user_flights.append(to_be_added_flight)
+        #database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
+        #print("Added flight details to the user's bookings")
+        print('comes here ')
+        return redirect("/payment.html")
+        # return {"flight_id" : to_be_added_flight}
 
 
     return redirect(url_for('flights.search_flights'))

@@ -85,7 +85,13 @@
                     </tr>
                     <tr>
                         <td class="add-bold"></td>
-                        <td><button class="add-flight-btn" id="{{f['flight_id']}}">Book Flight - {{f["flight_id"]}}</button></td>
+                        <td>
+                            <a href="{{ url_for('payment.payment', flight_id=f['flight_id']) }}">
+                                <button class="add-flight-btn" id="{{ f['flight_id'] }}">Book Flight - {{ f['flight_id'] }}</button>
+                            </a>
+                            
+                            
+                        </td>
                     </tr>
                 </table>
                 {% endfor %}

@@ -19,8 +19,8 @@ database = Database()
 payment_bp = Blueprint('payment', __name__)
 
 
-@payment_bp.route("/payment", methods = ["POST"])
+@payment_bp.route("/payment", methods = ["GET"])
 def payment():
-    flight_id = request.args.get("value")
+    flight_id = request.args.get('flight_id')
     print(f"Flight id payment {flight_id}")
     return render_template("payment.html")
