@@ -68,5 +68,4 @@ def confirm_payment():
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
         print("Added flight details to the user's bookings")
-        print('comes here ')
     return render_template("payment.html", status = status, user_flights_dict=user_flights_dict)
