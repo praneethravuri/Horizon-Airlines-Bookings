@@ -6,7 +6,7 @@ from routes.flights import flights_bp
 from routes.login import login_bp
 from routes.account import account_bp
 from routes.payment import payment_bp
-
+from routes.signup import signup_bp
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = secrets.token_hex(16)
@@ -24,6 +24,7 @@ app.register_blueprint(flights_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(account_bp)
 app.register_blueprint(payment_bp)
+app.register_blueprint(signup_bp)
 
 @app.route('/')
 def index():
