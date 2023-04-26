@@ -25,10 +25,16 @@ def account():
 
     find_user_details = database.users.find({'userEmail': user_email})
     user_name = ""
+    user_password = ""
     for user_details in find_user_details:
         user_name = user_details['userDetails']['userName']
         break
-    return render_template("account.html", user_email = user_email, user_name = user_name)
+
+    for user_details in find_user_details:
+        user_password = user_details['userDetails']['userPassword']
+        break
+
+    return render_template("account.html", user_email = user_email, user_name = user_name, user_password = user_password)
 
 @account_bp.route("/delete-account", methods=['POST'])
 def delete_account():
@@ -39,3 +45,22 @@ def delete_account():
     print("Account deleted")
     print(result.deleted_count)
     return render_template("login.html")
+
+
+@account_bp.route("/update-account", methods=['POST'])
+def update_account():
+    user_email = session.get("user_email")
+
+    # Get the new user details from the submitted form
+    new_user_name = request.form.get("user_name")
+    new_user_password = request.form.get("user_password")
+    new_user_email = request.form.get("user_new_email")
+
+    query = {'userEmail': user_email}
+    new_values = { "$set": { 'userDetails.userName': new_user_name, 'userDetails.userPassword': new_user_password, 'userEmail': new_user_email } }
+
+    database.users.update_one(query, new_values)
+
+    print("user details updated")
+
+    return redirect(url_for("account.account"))

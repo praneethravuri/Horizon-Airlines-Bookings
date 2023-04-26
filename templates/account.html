@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/account.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/login.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Account - Horizon Airlines</title>
 </head>
@@ -30,15 +31,49 @@
                     </tr>
                     <tr>
                         <td class="add-pad add-bold">
-                            <button class="add-bold" id="delete-account">Delete Account</button></td>
-                        <td class="add-pad add-bold"><button class="update-details add-bold">Update Details</button></td>
+                            <button class="add-bold btn delete-btn" id="delete-account">Delete Account</button></td>
+                        <td class="add-pad add-bold"><button class="add-bold btn update-btn" id="update-details-main">Update Details</button></td>
                     </tr>
                 </table>
             </div>
         </div>
+
+        <div class="update-details">
+            <form method="post" action="{{ url_for('account.update_account') }}">
+                <table class="user-details-table add-pad">
+                    <tr>
+                        <td class="add-pad add-bold">Name</td>
+                        <td class="add-pad"><input type="text" name="user_name" value="{{ user_name }}"></td>
+                    </tr>
+                    <tr>
+                        <td class="add-pad add-bold">Email</td>
+                        <td class="add-pad"><input type="text" name="user_new_email" value="{{ user_email }}"></td>
+                    </tr>
+                    <tr>
+                        <td class="add-pad add-bold">Password</td>
+                        <td class="add-pad"><input type="password" name="user_password" value="{{ user_password }}"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="add-pad add-bold"><button class="add-bold btn update-btn" type="submit">Update Details</button></td>
+                    </tr>
+                </table>
+            </form>
+            
+        </div>
+
     </section>
 
     <script src="../static/JS/deleteAccount.js"></script>
+    <script>
+        $(".update-details").hide();
+        $(document).ready(function(){
+            $("#update-details-main").click(function(){
+                $(".update-details").show();
+            })
+        })
+
+    </script>
 
 </body>
 </html>
