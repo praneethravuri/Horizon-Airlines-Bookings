@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/flights.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/homepage.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/payment.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Payment</title>
 </head>
 <body>
+
+    {% include "nav-bar.html" %}
+
     <p>{{fight_id}}</p>
-    <p>Test</p>
+
+    {% if status %}
+    <p>{{status}}</p>
+    {% endif %}
+
+    <div class="bookings-details">
+        <h2>Booking Summary</h2>
+        <div class="flights-table">
+            {% for key, value in user_flights_dict.items() %}
+            <table class="add-pad dynamic-table" style="margin-top: 10px;" id="table-{{key}}">
+                <tr>
+                    <td class="add-bold">Flight ID: </td>
+                    <td>{{key}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">Airline Name: </td>
+                    <td>{{value[0]}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">From Location: </td>
+                    <td>{{value[1] + " (" + value[2] + ")"}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">To Location: </td>
+                    <td>{{value[3] + " (" + value[4] + ")"}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">Departure Date & Time: </td>
+                    <td>{{value[5]}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">Arrival Date & Time: </td>
+                    <td>{{value[6]}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">Flight Duration: </td>
+                    <td>{{value[7]}}</td>
+                </tr>
+            </table>
+
+            <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="../static/JS/confirmPayment.js"></script>
+
 </body>
 </html>
