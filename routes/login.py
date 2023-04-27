@@ -41,3 +41,7 @@ def login():
         
     else:
         return render_template("login.html", error = "Invalid Credentials")
+    
+@login_bp.route("/login", methods=['GET'])
+def logout():
+    return render_template("login.html", status = True)

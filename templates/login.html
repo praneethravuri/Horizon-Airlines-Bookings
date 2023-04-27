@@ -21,6 +21,12 @@
         </nav>
     </header>
 
+	{% if status %}
+	<div class="logout-status">
+		<p>Logged Out Successfully</p>
+	</div>
+	{% endif %}
+
 	<div class="login-card">
 
 		<div class="login-card-title add-pad">

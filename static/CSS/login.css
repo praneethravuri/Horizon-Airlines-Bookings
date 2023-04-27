@@ -62,3 +62,10 @@ input[type=email], input[type=password], input[type=text]{
     text-decoration: none;
 }
 
+.logout-status{
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
