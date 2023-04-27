@@ -6,7 +6,7 @@ Delete ```env``` folder if it is already present in the project folder
 
 ### 2. Install necessary libraries
 
-```pip install flask pymongo```
+```pip install flask pymongo jupyter matplotlib```
 
 ### 3. Go to services and check if MongoDB is running
 
