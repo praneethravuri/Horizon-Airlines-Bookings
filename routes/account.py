@@ -21,7 +21,8 @@ account_bp = Blueprint('account', __name__)
 @account_bp.route("/account")
 def account():
 
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
 
     find_user_details = database.users.find({'userEmail': user_email})
     user_name = ""
@@ -38,7 +39,8 @@ def account():
 
 @account_bp.route("/delete-account", methods=['POST'])
 def delete_account():
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
     print(user_email)
     print("here")
     result = database.users.delete_one({"userEmail": user_email})
@@ -50,12 +52,15 @@ def delete_account():
 
 @account_bp.route("/update-account", methods=['POST'])
 def update_account():
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
 
     # Get the new user details from the submitted form
     new_user_name = request.form.get("user_name")
     new_user_password = request.form.get("user_password")
     new_user_email = request.form.get("user_new_email")
+
+    print(new_user_name)
 
     query = {'userEmail': user_email}
     new_values = { "$set": { 'userDetails.userName': new_user_name, 'userDetails.userPassword': new_user_password, 'userEmail': new_user_email } }
@@ -64,4 +69,4 @@ def update_account():
 
     print("user details updated")
 
-    return redirect(url_for("account.account"))
+    return redirect(url_for("account.account", user_email = new_user_email, user_name = new_user_name))

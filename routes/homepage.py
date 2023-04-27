@@ -26,6 +26,7 @@ def split_time(time_):
 @homepage_bp.route('/homepage')
 def homepage():
     user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
     user_flights = session.get("user_flights") or []
     user_flights_dict = {}
     has_bookings = False
@@ -45,15 +46,16 @@ def homepage():
             ]
         has_bookings = True
 
-    return render_template("homepage.html", user_name=user_name, user_flights_dict=user_flights_dict, has_bookings=has_bookings)
+    return render_template("homepage.html", user_name=user_name, user_flights_dict=user_flights_dict, has_bookings=has_bookings, user_email = user_email)
 
 @homepage_bp.route('/delete-flight', methods=['POST'])
 def delete_flight():
     to_be_deleted_flight = request.form['flight_id']
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
     user = database.bookings.find_one({"userEmail": user_email})
     user_flights = user.get("userFlights", [])
     updated_flights = [f for f in user_flights if f != to_be_deleted_flight]
     database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': updated_flights}})
     
-    return redirect(url_for('homepage.homepage'))
+    return redirect(url_for('homepage.homepage', user_name = user_name, user_email = user_email))

@@ -20,7 +20,8 @@ flights_bp = Blueprint('flights', __name__)
 
 @flights_bp.route("/search-flights", methods=["GET", "POST"])
 def search_flights():
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
 
     from_locations = list(database.flights.distinct("flight_details.fromLocation"))
     to_locations = list(database.flights.distinct("flight_details.toLocation"))
@@ -57,12 +58,13 @@ def search_flights():
         flight_details.update(f["flight_details"])
         all_flights.append(flight_details)
 
-    return render_template("flights.html", from_locations = from_locations, to_locations = to_locations, submit_clicked = submit_clicked, all_flights = all_flights, search_message = search_message)
+    return render_template("flights.html", from_locations = from_locations, to_locations = to_locations, submit_clicked = submit_clicked, all_flights = all_flights, search_message = search_message, user_name = user_name, user_email = user_email)
 
 @flights_bp.route("/add-flight", methods=['POST'])
 def add_flight():
     to_be_added_flight = request.form['flight_id']
-    user_email = session.get("user_email")
+    user_name = request.args.get("user_name")
+    user_email = request.args.get("user_email")
     user = database.bookings.find_one({"userEmail" : user_email})
     user_flights = user["userFlights"]
     error = "not_possible"
@@ -75,7 +77,7 @@ def add_flight():
         #database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
         #print("Added flight details to the user's bookings")
         print('comes here ')
-        return redirect("/payment.html")
+        return redirect("/payment.html", user_name = user_name, user_email = user_email)
         # return {"flight_id" : to_be_added_flight}
 
 

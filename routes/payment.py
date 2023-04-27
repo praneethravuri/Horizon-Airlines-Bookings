@@ -54,7 +54,7 @@ def confirm_payment():
     status = ""
     user_flights_dict = {}
     to_be_added_flight = session.get("to_be_added_flight")
-    print(to_be_added_flight)
+    print(f"\n\n{to_be_added_flight}")
     user_email = session.get("user_email")
     print(user_email)
     user = database.bookings.find_one({"userEmail" : user_email})
@@ -63,9 +63,9 @@ def confirm_payment():
     error = "not_possible"
     if to_be_added_flight in user_flights:
         error = "Flight already booked!"
-        print(error)
+        print(f"{error} \n\n")
     else:
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
-        print("Added flight details to the user's bookings")
+        print("Added flight details to the user's bookings\n\n")
     return render_template("payment.html", status = status, user_flights_dict=user_flights_dict)
