@@ -78,12 +78,12 @@ def confirm_payment():
     error = "not_possible"
     if to_be_added_flight in user_flights:
         error = "Flight already booked!"
-        return render_template("flights.html", status = error)
+        return {"status" : "error"}
     else:
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
         print("Added flight details to the user's bookings\n\n")
-        return render_template("flights.html", status = "Booked Successfully")
+        return {"status" : "booked"}
 
 @payment_bp.route("/cancel-transaction", methods = ["POST"])
 def cancel_transaction():
@@ -105,6 +105,7 @@ def validate_promo_code():
         discount = float(result["discount"])
         price = round(price - ((discount/100) * price), 2)
         print(f"discounted price: {price}")
+        total_price = round(float(price) + float(tax), 2)
     else:
         status = "Invalid Promo Code"
 
