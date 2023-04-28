@@ -50,6 +50,8 @@
                     </div>
                 </form>
 
+                <hr>
+
             {% for key, value in user_flights_dict.items() %}
             <h2>Booking Summary</h2>
             <table class="add-pad dynamic-table" style="margin-top: 10px;" id="table-{{key}}">
@@ -83,7 +85,8 @@
                 </tr>
             </table>
 
-            <table class="add-pad dynamic-table" style="margin-top: 10px; text-align: center;">
+            <hr>
+            <table id="price-breakdown" class="add-pad dynamic-table" style="margin-top: 10px; text-align: center;">
                 <h2>Price Breakdown</h2>
                 <tr>
                     <td class="add-bold">Price: </td>
@@ -114,15 +117,23 @@
             
                 <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
 
-                
+                <br>
+                <br>
             </div>
+            <br>
+            <br>    
             
             {% endfor %}
         </div>
 
 
-
     </div>
+
+    
+    <br>
+    <br>
+    <br>
+    <br>
 
     <script src="../static/JS/confirmPayment.js"></script>
     <!--<script src="../static/JS/cancelTransaction.js"></script>-->

@@ -46,3 +46,47 @@
 table{
     border: none;
 }
+
+.cancel-transaction{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: red;
+    font-weight: bold;
+    color: whitesmoke;
+    transition: all 0.3s ease 0s;
+}
+
+.cancel-transaction:hover{
+    background-color: darkred;
+}
+
+.validate-btn{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: bold;
+    color: whitesmoke;
+    transition: all 0.3s ease 0s;
+}
+
+.validate-btn:hover{
+    background-color: darkgreen;
+}
+
+.dynamic-table{
+    border: none;
+}
+
+.bookings-details{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#price-breakdown{
+    margin-top: 30px;
+}
+
+hr{
+    border-color: whitesmoke;
+    margin: 20px;
+}
