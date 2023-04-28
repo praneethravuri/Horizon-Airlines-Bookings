@@ -12,6 +12,7 @@ class Database:
             cls._instance.users = cls._instance.db['users']
             cls._instance.flights = cls._instance.db['flights']
             cls._instance.bookings = cls._instance.db['bookings']
+            cls._instance.discount = cls._instance.db['discount']
         return cls._instance
 
 database = Database()
@@ -25,8 +26,16 @@ def split_time(time_):
 @payment_bp.route("/payment", methods = ["GET"])
 def payment():
     to_be_added_flight = request.args.get('flight_id')
+
+
     price = request.args.get("price")
-    print(f"payment {price}")
+    tax = float(price) / 2
+    total_price = round(float(price) + float(tax), 2)
+
+    session["price"] = price
+    session["tax"] = tax
+    session["total_price"] = total_price
+
     session["to_be_added_flight"] = to_be_added_flight
     print(f"Flight id payment {to_be_added_flight}")
     user_email = session.get("user_email")
@@ -47,12 +56,14 @@ def payment():
             flight["flight_details"]["duration"],
             flight["flight_details"]["totalSeats"]
             ]
+        
+    session["user_flights_dict"] = user_flights_dict
 
-    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price)
+    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price, tax = tax, total_price = total_price, discount = "")
 
 @payment_bp.route("/confirm-payment", methods = ["POST"])
 def confirm_payment():
-    print("here")
+    print("here confirm payment")
     status = ""
     user_flights_dict = {}
     to_be_added_flight = session.get("to_be_added_flight")
@@ -67,14 +78,34 @@ def confirm_payment():
     error = "not_possible"
     if to_be_added_flight in user_flights:
         error = "Flight already booked!"
-        print(f"{error} \n\n")
+        return render_template("flights.html", status = error)
     else:
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
         print("Added flight details to the user's bookings\n\n")
-    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price)
+        return render_template("flights.html", status = "Booked Successfully")
 
 @payment_bp.route("/cancel-transaction", methods = ["POST"])
 def cancel_transaction():
     print("clicked cancel")
-    return render_template("flights.html". user)
+    return render_template("flights.html", status = "Cancelled Transaction")
+
+@payment_bp.route("/validate-promo-code", methods = ["POST"])
+def validate_promo_code():
+    user_flights_dict = session.get("user_flights_dict")
+    promo_code = request.form["promocode"]
+    price = float(session.get("price"))
+    status = ""
+    tax = float(session.get("tax"))
+    total_price = float(session.get("total_price"))
+
+    result = database.discount.find_one({"promoCode" : promo_code})
+
+    if result:
+        discount = float(result["discount"])
+        price = round(price - ((discount/100) * price), 2)
+        print(f"discounted price: {price}")
+    else:
+        status = "Invalid Promo Code"
+
+    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price, tax = tax, total_price = total_price, discount = discount)

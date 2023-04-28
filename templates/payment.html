@@ -28,7 +28,7 @@
 
             <div class="payment-section add-pad dynamic-table">
                 <h2 style="margin-bottom: 20px;">Payment Information</h2>
-                <form method="POST" action="{{ url_for('payment.validate_promocode') }}">
+                <form method="POST" action="{{ url_for('payment.validate_promo_code') }}">
                     <div class="credit-card-number add-pad align-left">
                         <label for="">Credit Card Number: </label>
                         <input type="text">
@@ -43,7 +43,11 @@
                     </div>
                     <div class="promocode add-pad align-left">
                         <label for="">Promo Code: </label>
-                        <input type="text" name="promocode"> 
+                        <input type="text" name="promocode" id="promocode">
+                    </div>
+                    <div class="validate-promo-code add-pad">
+                        <button class="validate-btn">Validate Promo Code</button>
+                    </div>
                 </form>
 
             {% for key, value in user_flights_dict.items() %}
@@ -77,11 +81,27 @@
                     <td class="add-bold">Flight Duration: </td>
                     <td>{{value[7]}}</td>
                 </tr>
+            </table>
 
+            <table class="add-pad dynamic-table" style="margin-top: 10px; text-align: center;">
+                <h2>Price Breakdown</h2>
                 <tr>
                     <td class="add-bold">Price: </td>
                     <td>${{price}}</td>
                 </tr>
+                <tr>
+                    <td class="add-bold">Tax: </td>
+                    <td>${{tax}}</td>
+                </tr>
+                <tr>
+                    <td class="add-bold">Total: </td>
+                    <td>${{total_price}}</td>
+                </tr>
+                {% if discount %}
+                <tr>
+                    <td class="add-bold">Discount: </td>
+                    <td>{{discount}}%</td>
+                {% endif %}
             </table>
 
 
@@ -92,7 +112,7 @@
                     <button class="cancel-transaction">Cancel Transaction</button>
                 </a>
             
-                    <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
+                <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
 
                 
             </div>

@@ -19,9 +19,13 @@ def generate_promo_code():
 
 
 # Insert 10 documents with randomly generated promo codes and discount values
+# Insert 10 documents with randomly generated promo codes and discount values
 for i in range(20):
     promo_code = generate_promo_code()
     discount_value = random.randint(10, 70)
-    document = {promo_code: discount_value}
-    print(document)
+    document = {
+        "promoCode" : promo_code,
+        "discount" : discount_value
+    }
+
     discount.insert_one(document)
