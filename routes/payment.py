@@ -106,7 +106,8 @@ def validate_promo_code():
         price = round(price - ((discount/100) * price), 2)
         print(f"discounted price: {price}")
         total_price = round(float(price) + float(tax), 2)
+        return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price, tax = tax, total_price = total_price, discount = discount)
     else:
-        status = "Invalid Promo Code"
+        return {"status" : "Invalid Promo Code"}
 
-    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price, tax = tax, total_price = total_price, discount = discount)
+    

@@ -15,3 +15,14 @@ $(document).ready(function(){
         });
     });
 });
+
+$(document).ready(function(){
+    $(".validate-btn").click(function(){
+        $.post('/validate-promo-code').done(function(response){
+            if(response  && response["status"] == "Invalid Promo Code"){
+                document.getElementById("status").style.display = "block";
+                document.getElementById("status").innerHTML = "Invalid Promo Code"
+            }
+        });
+    });
+})
