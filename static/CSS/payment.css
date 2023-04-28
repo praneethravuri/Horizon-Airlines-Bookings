@@ -19,3 +19,30 @@
     background-color: darkgreen;
 }
 
+.payment-section{
+    margin: 30px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.payment-section input{
+    padding: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.add-pad{
+    padding: 10px;
+}
+
+
+.payment-section{
+    text-align: center;
+}
+
+.align-left{
+    text-align: left;
+}
+
+table{
+    border: none;
+}

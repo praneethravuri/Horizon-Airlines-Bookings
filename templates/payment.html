@@ -16,16 +16,38 @@
 
     {% include "nav-bar.html" %}
 
-    <p>{{fight_id}}</p>
+    <p>{{flight_id}}</p>
 
     {% if status %}
     <p>{{status}}</p>
     {% endif %}
 
     <div class="bookings-details">
-        <h2>Booking Summary</h2>
+        
         <div class="flights-table">
+
+            <div class="payment-section add-pad dynamic-table">
+                <h2 style="margin-bottom: 20px;">Payment Information</h2>
+                <form method="POST" action="{{ url_for('payment.validate_promocode') }}">
+                    <div class="credit-card-number add-pad align-left">
+                        <label for="">Credit Card Number: </label>
+                        <input type="text">
+                    </div>
+                    <div class="select-expiry add-pad align-left">
+                        <label for="">Expiration Date: </label>
+                        <input type="text" name="" id="" placeholder="MM/YY">
+                    </div>
+                    <div class="security-code add-pad align-left">
+                        <label for="">Security Code: </label>
+                        <input type="password" placeholder="XXX">
+                    </div>
+                    <div class="promocode add-pad align-left">
+                        <label for="">Promo Code: </label>
+                        <input type="text" name="promocode"> 
+                </form>
+
             {% for key, value in user_flights_dict.items() %}
+            <h2>Booking Summary</h2>
             <table class="add-pad dynamic-table" style="margin-top: 10px;" id="table-{{key}}">
                 <tr>
                     <td class="add-bold">Flight ID: </td>
@@ -62,20 +84,24 @@
                 </tr>
             </table>
 
+
+            </div>
+
             <div class="transaction-buttons">
                 <a href="{{ url_for('flights.search_flights', user_name = user_name, user_email = user_email, status = 'Cancelled Transaction')}}">
                     <button class="cancel-transaction">Cancel Transaction</button>
                 </a>
-                
-                <a href="{{ url_for('flights.search_flights', user_name = user_name, user_email = user_email, success = 'Successfully Booked Flight')}}">
+            
                     <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
-                </a>
 
                 
             </div>
             
             {% endfor %}
         </div>
+
+
+
     </div>
 
     <script src="../static/JS/confirmPayment.js"></script>
