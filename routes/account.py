@@ -24,6 +24,9 @@ def account():
     user_name = request.args.get("user_name")
     user_email = request.args.get("user_email")
 
+    session["user_email"] = user_email
+    session["user_name"] = user_name
+
     find_user_details = database.users.find({'userEmail': user_email})
     user_name = ""
     user_password = ""
@@ -39,21 +42,23 @@ def account():
 
 @account_bp.route("/delete-account", methods=['POST'])
 def delete_account():
-    user_name = request.args.get("user_name")
-    user_email = request.args.get("user_email")
+    user_name = session.get("user_name")
+    user_email = session.get("user_email")
     print(user_email)
     print("here")
     result = database.users.delete_one({"userEmail": user_email})
-    del_bookings = database.bookings.delete_many({"userEmail": user_email})
+    database.bookings.delete_many({"userEmail": user_email})
     print("Account deleted")
     print(result.deleted_count)
-    return render_template("login.html")
+    return redirect(url_for("login.logout", status = "Deleted Account Successfully"))
 
 
 @account_bp.route("/update-account", methods=['POST'])
 def update_account():
-    user_name = request.args.get("user_name")
-    user_email = request.args.get("user_email")
+    user_name = session.get("user_name")
+    user_email = session.get("user_email")
+
+    print(user_email)
 
     # Get the new user details from the submitted form
     new_user_name = request.form.get("user_name")
@@ -69,4 +74,4 @@ def update_account():
 
     print("user details updated")
 
-    return redirect(url_for("account.account", user_email = new_user_email, user_name = new_user_name))
+    return redirect(url_for("login.logout", status = "Updated Details Successfully"))

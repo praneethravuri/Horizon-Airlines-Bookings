@@ -44,4 +44,4 @@ def login():
     
 @login_bp.route("/login", methods=['GET'])
 def logout():
-    return render_template("login.html", status = True)
+    return render_template("login.html", status = "Logged Out Successfully")

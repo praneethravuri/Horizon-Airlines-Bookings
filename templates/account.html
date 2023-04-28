@@ -31,8 +31,11 @@
                     </tr>
                     <tr>
                         <td class="add-pad add-bold">
-                            <button class="add-bold btn delete-btn" id="delete-account">Delete Account</button></td>
-                        <td class="add-pad add-bold"><button class="add-bold btn update-btn" id="update-details-main">Update Details</button></td>
+                            <form action="{{ url_for('account.delete_account') }}", method="post">
+                                <button class="add-bold btn delete-btn" id="delete-account">Delete Account</button></td>
+                        <td class="add-pad add-bold"><button class="add-bold btn update-btn" id="update-details-main">Update Details</button>
+                            </form>
+                            </td>
                     </tr>
                 </table>
             </div>
@@ -65,15 +68,7 @@
     </section>
 
     <script src="../static/JS/deleteAccount.js"></script>
-    <script>
-        $(".update-details").hide();
-        $(document).ready(function(){
-            $("#update-details-main").click(function(){
-                $(".update-details").show();
-            })
-        })
-
-    </script>
+    <script src="../static/JS/updateAccountDetails.js"></script>
 
 </body>
 </html>
