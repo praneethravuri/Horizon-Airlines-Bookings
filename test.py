@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from pymongo import MongoClient
 import random
 import string
+import json
+from bson import json_util
 
 client = MongoClient('mongodb://localhost:27017/')
 db = client['airportDB']
@@ -10,22 +12,9 @@ flights = db["flights"]
 bookings = db["bookings"]
 discount = db["discount"]
 
-def generate_promo_code():
-    letters = string.ascii_uppercase
-    digits = string.digits
-    return (''.join(random.choice(letters) for i in range(3)) + '-' +
-            ''.join(random.choice(digits) for i in range(3)) + '-' +
-            ''.join(random.choice(letters) for i in range(3)))
+query = db.discount.find()
 
-
-# Insert 10 documents with randomly generated promo codes and discount values
-# Insert 10 documents with randomly generated promo codes and discount values
-for i in range(20):
-    promo_code = generate_promo_code()
-    discount_value = random.randint(10, 70)
-    document = {
-        "promoCode" : promo_code,
-        "discount" : discount_value
-    }
-
-    discount.insert_one(document)
+with open('db_data/discount.json', 'w') as f:
+    for _ in query:
+        json.dump(_, f, default=json_util.default)
+        f.write('\n')

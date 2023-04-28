@@ -1,0 +1,20 @@
+{"_id": {"$oid": "644433dcfb3ae5fdcd979678"}, "userEmail": "jacob.harris@yahoo.com", "userFlights": ["AI209"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979679"}, "userEmail": "lisa.rodriguez@hotmail.com", "userFlights": ["AA001", "AC216", "BA205"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967a"}, "userEmail": "peter.nguyen@outlook.com", "userFlights": ["TK219", "AA001", "EK004"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967b"}, "userEmail": "kate.brown@gmail.com", "userFlights": ["AA215", "BA216"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967c"}, "userEmail": "john.doe@gmail.com", "userFlights": ["AF217", "QF218", "EK219"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967d"}, "userEmail": "sarah.smith@yahoo.com", "userFlights": ["AA215", "AF216"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967e"}, "userEmail": "michael.nguyen@hotmail.com", "userFlights": ["TK217"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97967f"}, "userEmail": "jessica.johnson@outlook.com", "userFlights": ["AA301", "BA302", "FR303", "KL304"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979680"}, "userEmail": "adam.garcia@gmail.com", "userFlights": ["LH705", "KL304", "KL403", "KL404", "KL506", "AA001", "EK208", "EK219", "UA604", "QR406"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979682"}, "userEmail": "ryan.jackson@yahoo.com", "userFlights": ["AF206", "UA207"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979683"}, "userEmail": "alexandra.chen@hotmail.com", "userFlights": ["TK313", "JL314", "EY315"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979684"}, "userEmail": "jason.hernandez@outlook.com", "userFlights": ["AF312", "LH401"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979685"}, "userEmail": "emma.miller@gmail.com", "userFlights": ["SU505", "KL506", "AB401"]}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979686"}, "userEmail": "hannah.wilson@gmail.com", "userFlights": []}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979687"}, "userEmail": "david.kim@yahoo.com", "userFlights": []}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979688"}, "userEmail": "olivia.li@hotmail.com", "userFlights": []}
+{"_id": {"$oid": "644433dcfb3ae5fdcd979689"}, "userEmail": "joshua.young@outlook.com", "userFlights": []}
+{"_id": {"$oid": "644433dcfb3ae5fdcd97968a"}, "userEmail": "grace.davis@gmail.com", "userFlights": []}
+{"_id": {"$oid": "644872b2ac8dfee851578763"}, "userEmail": "arishithpakalapati@gmail.com", "userFlights": []}
+{"_id": {"$oid": "644b33a679e1be3cafe1b730"}, "userEmail": "emma.williams@gmail.com", "userFlights": ["DL703", "SU505", "AC306", "EY220", "QF218", "AB401", "SQ706"]}

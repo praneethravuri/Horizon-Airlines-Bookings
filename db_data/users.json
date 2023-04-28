@@ -1,0 +1,20 @@
+{"_id": {"$oid": "64438891abbc0b7508636359"}, "userEmail": "jacob.harris@yahoo.com", "userDetails": {"userName": "Jacob Harris", "userPassword": "qwerty321"}}
+{"_id": {"$oid": "64438891abbc0b750863635a"}, "userEmail": "lisa.rodriguez@hotmail.com", "userDetails": {"userName": "Lisa Rodriguez 1", "userPassword": "secretp@ss"}}
+{"_id": {"$oid": "64438891abbc0b750863635b"}, "userEmail": "peter.nguyen@outlook.com", "userDetails": {"userName": "Peter Nguyen", "userPassword": "myP@ssw0rd"}}
+{"_id": {"$oid": "64438891abbc0b750863635c"}, "userEmail": "kate.brown@gmail.com", "userDetails": {"userName": "Kate Brown", "userPassword": "letmein123"}}
+{"_id": {"$oid": "6443889eabbc0b750863635d"}, "userEmail": "john.doe@gmail.com", "userDetails": {"userName": "John Doe", "userPassword": "mySecretPassword123"}}
+{"_id": {"$oid": "6443889eabbc0b750863635e"}, "userEmail": "sarah.smith@yahoo.com", "userDetails": {"userName": "Sarah Smith", "userPassword": "ilovecookies"}}
+{"_id": {"$oid": "6443889eabbc0b750863635f"}, "userEmail": "michael.nguyen@hotmail.com", "userDetails": {"userName": "Michael Nguyen", "userPassword": "S3cretP@ss"}}
+{"_id": {"$oid": "6443889eabbc0b7508636360"}, "userEmail": "jessica.johnson@outlook.com", "userDetails": {"userName": "Jessica Johnson", "userPassword": "mypassword1234"}}
+{"_id": {"$oid": "6443889eabbc0b7508636361"}, "userEmail": "adam.garcia@gmail.com", "userDetails": {"userName": "Adam Garcia Pakalapati", "userPassword": "P@ssw0rd!"}}
+{"_id": {"$oid": "644388c3abbc0b7508636363"}, "userEmail": "ryan.jackson@yahoo.com", "userDetails": {"userName": "Ryan Jackson", "userPassword": "g1vem3access!"}}
+{"_id": {"$oid": "644388c3abbc0b7508636364"}, "userEmail": "alexandra.chen@hotmail.com", "userDetails": {"userName": "Alexandra Zhang", "userPassword": "il0ve2dance"}}
+{"_id": {"$oid": "644388c3abbc0b7508636365"}, "userEmail": "jason.hernandez@outlook.com", "userDetails": {"userName": "Jason Hernandez", "userPassword": "m1ndth3gap"}}
+{"_id": {"$oid": "644388c3abbc0b7508636366"}, "userEmail": "emma.miller@gmail.com", "userDetails": {"userName": "Emma Miller", "userPassword": "th1nkpositive"}}
+{"_id": {"$oid": "644388edabbc0b7508636367"}, "userEmail": "hannah.wilson@gmail.com", "userDetails": {"userName": "Hannah Wilson", "userPassword": "p@ssw0rd456"}}
+{"_id": {"$oid": "644388edabbc0b7508636368"}, "userEmail": "david.kim@yahoo.com", "userDetails": {"userName": "David Kim", "userPassword": "myP@ssword"}}
+{"_id": {"$oid": "644388edabbc0b7508636369"}, "userEmail": "olivia.li@hotmail.com", "userDetails": {"userName": "Olivia Li", "userPassword": "letmein12"}}
+{"_id": {"$oid": "644388edabbc0b750863636a"}, "userEmail": "joshua.young@outlook.com", "userDetails": {"userName": "Joshua Young", "userPassword": "p@ssword123"}}
+{"_id": {"$oid": "644388edabbc0b750863636b"}, "userEmail": "grace.davis@gmail.com", "userDetails": {"userName": "Grace Davis", "userPassword": "m0t1vat3d!"}}
+{"_id": {"$oid": "644872b2ac8dfee851578762"}, "userEmail": "arishithpakalapati@gmail.com", "userDetails": {"userName": "Arishith Pakalapati", "userPassword": "Arishith1!"}}
+{"_id": {"$oid": "644b33a679e1be3cafe1b72f"}, "userEmail": "emma.williams@gmail.com", "userDetails": {"userName": "Emma Watson", "userPassword": "p@ssw0rd123"}}
