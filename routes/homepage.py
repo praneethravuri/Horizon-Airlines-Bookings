@@ -52,9 +52,9 @@ def homepage():
 def delete_flight():
     to_be_deleted_flight = request.form['flight_id']
     user_name = request.args.get("user_name")
-    user_email = request.args.get("user_email")
+    user_email = session.get("user_email")
     user = database.bookings.find_one({"userEmail": user_email})
-    user_flights = user.get("userFlights", [])
+    user_flights = user["userFlights"]
     updated_flights = [f for f in user_flights if f != to_be_deleted_flight]
     database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': updated_flights}})
     

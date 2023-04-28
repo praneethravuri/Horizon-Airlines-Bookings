@@ -55,14 +55,31 @@
                     <td class="add-bold">Flight Duration: </td>
                     <td>{{value[7]}}</td>
                 </tr>
+
+                <tr>
+                    <td class="add-bold">Price: </td>
+                    <td>${{price}}</td>
+                </tr>
             </table>
 
-            <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
+            <div class="transaction-buttons">
+                <a href="{{ url_for('flights.search_flights', user_name = user_name, user_email = user_email, status = 'Cancelled Transaction')}}">
+                    <button class="cancel-transaction">Cancel Transaction</button>
+                </a>
+                
+                <a href="{{ url_for('flights.search_flights', user_name = user_name, user_email = user_email, success = 'Successfully Booked Flight')}}">
+                    <button id="{{key}}" class="confirm-booking">Confirm Booking</button>
+                </a>
+
+                
+            </div>
+            
             {% endfor %}
         </div>
     </div>
 
     <script src="../static/JS/confirmPayment.js"></script>
+    <!--<script src="../static/JS/cancelTransaction.js"></script>-->
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from pymongo import MongoClient
 import random
+import string
 
 client = MongoClient('mongodb://localhost:27017/')
 db = client['airportDB']
@@ -9,32 +10,18 @@ flights = db["flights"]
 bookings = db["bookings"]
 discount = db["discount"]
 
-#airline_names = flights.distinct("flight_details.airlineName")
+def generate_promo_code():
+    letters = string.ascii_uppercase
+    digits = string.digits
+    return (''.join(random.choice(letters) for i in range(3)) + '-' +
+            ''.join(random.choice(digits) for i in range(3)) + '-' +
+            ''.join(random.choice(letters) for i in range(3)))
 
-#i = 0
-#for air in airline_names:
-#    print("db.discount.insertOne({" + '"' + air + '"' + ":" + "{government: " + str(random.randint(0, 70)) + ",student: " + str#(random.randint(0, 70)) +",privateSector: " + str(random.randint(0, 70)) +",unemployed: " + str(random.randint(0, 70)) +",#business: " + str(random.randint(0, 70))  + "}})")
-    #print("\n")
 
-#result = discount.find_one({'Qantas Airways.privateSector': 1})
-
-# print the value of privateSector
-#print(result['Qantas Airways']['privateSector'])
-
-query = flights.aggregate([
-    {
-        '$project': {
-            '_id': 0,
-            'flight_id': 1,
-            'fromLocation': '$flight_details.fromLocation',
-            'toLocation': '$flight_details.toLocation'
-        }
-    }
-])
-
-flight_locations = []
-for result in query:
-    print(f"{result['fromLocation']} --> {result['toLocation']}")
-    flight_locations.append((result['fromLocation'], result['toLocation']))
-
-print(len(flight_locations))
+# Insert 10 documents with randomly generated promo codes and discount values
+for i in range(20):
+    promo_code = generate_promo_code()
+    discount_value = random.randint(10, 70)
+    document = {promo_code: discount_value}
+    print(document)
+    discount.insert_one(document)

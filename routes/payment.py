@@ -25,6 +25,8 @@ def split_time(time_):
 @payment_bp.route("/payment", methods = ["GET"])
 def payment():
     to_be_added_flight = request.args.get('flight_id')
+    price = request.args.get("price")
+    print(f"payment {price}")
     session["to_be_added_flight"] = to_be_added_flight
     print(f"Flight id payment {to_be_added_flight}")
     user_email = session.get("user_email")
@@ -46,7 +48,7 @@ def payment():
             flight["flight_details"]["totalSeats"]
             ]
 
-    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict)
+    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price)
 
 @payment_bp.route("/confirm-payment", methods = ["POST"])
 def confirm_payment():
@@ -54,6 +56,8 @@ def confirm_payment():
     status = ""
     user_flights_dict = {}
     to_be_added_flight = session.get("to_be_added_flight")
+    price = session.get("price")
+    print(price)
     print(f"\n\n{to_be_added_flight}")
     user_email = session.get("user_email")
     print(user_email)
@@ -68,4 +72,9 @@ def confirm_payment():
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
         print("Added flight details to the user's bookings\n\n")
-    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict)
+    return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price)
+
+@payment_bp.route("/cancel-transaction", methods = ["POST"])
+def cancel_transaction():
+    print("clicked cancel")
+    return render_template("flights.html". user)

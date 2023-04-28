@@ -20,6 +20,14 @@
         <p>Error - You have already booked this flight</p>
     </div>
 
+    {% if status %}
+    <p class="status-bar">{{status}}</p>
+    {% endif %}
+
+    {% if success %}
+    <p class="success-bar">{{success}}</p>
+    {% endif %}
+
     <section class="main-content add-pad">
 
         <div class="flight-bookings">
@@ -84,9 +92,13 @@
                         <td>{{f["duration"]}}</td>
                     </tr>
                     <tr>
+                        <td class="add-bold">Price:  </td>
+                        <td>${{f["price"]}}</td>
+                    </tr>
+                    <tr>
                         <td class="add-bold"></td>
                         <td>
-                            <a href="{{ url_for('payment.payment', flight_id=f['flight_id']) }}">
+                            <a href="{{ url_for('payment.payment', flight_id=f['flight_id'], price = f['price'])}}">
                                 <button class="add-flight-btn" id="{{ f['flight_id'] }}">Book Flight - {{ f['flight_id'] }}</button>
                             </a>
                             

@@ -203,3 +203,28 @@ Toronto --> Rio de Janeiro
 Zurich --> Rio de Janeiro
 
 ```
+
+### Discount Code
+
+```
+{'KPJ-530-BLQ': 56}
+{'GAY-635-QQJ': 48}
+{'VXD-630-OTK': 60}
+{'XUR-083-PCN': 33}
+{'YAC-492-OXX': 50}
+{'MHE-053-JME': 65}
+{'LFP-117-RKK': 19}
+{'RUY-613-KSO': 48}
+{'STG-377-MFG': 14}
+{'ING-312-IPG': 57}
+{'UDR-459-JGA': 19}
+{'NOV-978-YPH': 40}
+{'SDQ-662-KOK': 55}
+{'ATD-449-EVT': 63}
+{'TIC-764-QOI': 43}
+{'THP-875-KWX': 45}
+{'NEC-001-PWI': 57}
+{'WJP-458-DJQ': 12}
+{'TTX-158-TWM': 43}
+{'EDW-593-NDG': 44}
+```
