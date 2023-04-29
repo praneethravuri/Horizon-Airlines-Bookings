@@ -90,3 +90,27 @@ hr{
     border-color: whitesmoke;
     margin: 20px;
 }
+
+.status-bar{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(235, 112, 112);
+    color: white;
+    font-weight: bold;
+}
+
+.success{
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+#book-flight-status{
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}

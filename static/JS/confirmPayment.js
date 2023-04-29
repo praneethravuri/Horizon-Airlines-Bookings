@@ -7,32 +7,9 @@ $(document).ready(function(){
                 document.getElementById("status").innerHTML = "You have already booked this flight"
             }
             else if(response && response["status"] == "booked"){
-                document.getElementById("status").style.display = "block";
-                document.getElementById("status").innerHTML = "Booked Flight Successfully"
-                document.getElementById("status").style.backgroundColor = "green";
+                document.getElementById("book-flight-status").style.display = "block";
+                document.getElementById("book-flight-status").style.backgroundColor = "green";
 
-            }
-        });
-    });
-});
-
-$(document).ready(function(){
-    $(".validate-btn").click(function(){
-        $.post('/validate-promo-code').done(function(response){
-            if(response  && response["status"] == "Invalid Promo Code"){
-                document.getElementById("status").style.display = "block";
-                document.getElementById("status").innerHTML = "Invalid Promo Code"
-            }
-        });
-    });
-})
-
-$(document).ready(function(){
-    $(".validate-btn").click(function(){
-        $.post('/validate-promo-code').done(function(response){
-            if(response  && response["status"] == "Invalid Promo Code"){
-                document.getElementById("status").style.display = "block";
-                document.getElementById("status").innerHTML = "Invalid Promo Code"
             }
         });
     });

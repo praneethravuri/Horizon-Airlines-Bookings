@@ -12,9 +12,7 @@ flights = db["flights"]
 bookings = db["bookings"]
 discount = db["discount"]
 
-query = db.discount.find()
+results = discount.find({}, {"_id": 0})
 
-with open('db_data/discount.json', 'w') as f:
-    for _ in query:
-        json.dump(_, f, default=json_util.default)
-        f.write('\n')
+for result in results:
+    print(result)

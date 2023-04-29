@@ -90,24 +90,44 @@ def cancel_transaction():
     print("clicked cancel")
     return render_template("flights.html", status = "Cancelled Transaction")
 
-@payment_bp.route("/validate-promo-code", methods = ["POST"])
+
+@payment_bp.route("/validate-promo-code", methods=["POST"])
 def validate_promo_code():
     user_flights_dict = session.get("user_flights_dict")
     promo_code = request.form["promocode"]
+    print(f"Promo code {promo_code}")
+    print(type(promo_code))
     price = float(session.get("price"))
     status = ""
     tax = float(session.get("tax"))
     total_price = float(session.get("total_price"))
 
-    result = database.discount.find_one({"promoCode" : promo_code})
+    result = database.discount.find_one({"promoCode": promo_code})
+    print(result)
 
     if result:
         discount = float(result["discount"])
-        price = round(price - ((discount/100) * price), 2)
+        price = round(price - ((discount / 100) * price), 2)
         print(f"discounted price: {price}")
         total_price = round(float(price) + float(tax), 2)
-        return render_template("payment.html", status = status, user_flights_dict=user_flights_dict, price = price, tax = tax, total_price = total_price, discount = discount)
+        status = "success"
+        return render_template(
+            "payment.html",
+            status=status,
+            user_flights_dict=user_flights_dict,
+            price=price,
+            tax=tax,
+            total_price=total_price,
+            discount=discount,
+        )
     else:
-        return {"status" : "Invalid Promo Code"}
-
-    
+        status = "error"
+        return render_template(
+            "payment.html",
+            status=status,
+            user_flights_dict=user_flights_dict,
+            price=price,
+            tax=tax,
+            total_price=total_price,
+            discount="",
+        )

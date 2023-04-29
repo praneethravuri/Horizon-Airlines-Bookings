@@ -18,11 +18,20 @@
 
     <p>{{flight_id}}</p>
 
-    <div class="status-bar" id="status" style="display: none;">
-        <p></p>
+    {% if status == "success" %}
+    <div class="status-bar success" id="success">
+        <p id="success-p">Valid Promo Code</p>
+    </div>
+    {% elif status == "error" %}
+    <div class="status-bar error" id="error">
+        <p>Invalid Promo Code</p>
+    </div>
+    {% endif %}
+
+    <div id="book-flight-status" style="display: none;">
+        <p>Flight Booked Successfully</p>
     </div>
 
-    {{status}}
 
     <div class="bookings-details">
         
