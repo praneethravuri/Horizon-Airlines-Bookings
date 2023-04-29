@@ -18,28 +18,6 @@ Delete ```env``` folder if it is already present in the project folder
 
 ```python app.py```
 
-### Project Structure
-
-```
-.
-|--data
-|--db_data
-|--ENV
-|--static
-|  |--CSS
-|  |  |--homepage.css
-|  |  |--login.css
-|  |  |--navbar.css
-|  |--JS
-|  |  |--invalidCredentials.js
-|  |--images
-|--templates
-|  |--homepage.html
-|  |--login.html
-|--app.py
-|--README.MD
-
-```
 
 ### Database users and passwords
 ```
