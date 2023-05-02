@@ -54,7 +54,7 @@ def payment():
             split_time(flight["flight_details"]["departureTime"]),
             split_time(flight["flight_details"]["arrivalTime"]),
             flight["flight_details"]["duration"],
-            flight["flight_details"]["totalSeats"]
+            flight["flight_details"]["price"]
             ]
         
     session["user_flights_dict"] = user_flights_dict

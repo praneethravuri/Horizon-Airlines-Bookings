@@ -42,7 +42,7 @@ def homepage():
                 split_time(flight["flight_details"]["departureTime"]),
                 split_time(flight["flight_details"]["arrivalTime"]),
                 flight["flight_details"]["duration"],
-                flight["flight_details"]["totalSeats"]
+                flight["flight_details"]["price"]
             ]
         has_bookings = True
 
