@@ -114,3 +114,11 @@ hr{
     color: white;
     font-weight: bold;
 }
+
+#status-dup{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(235, 112, 112);
+    color: white;
+    font-weight: bold;
+}

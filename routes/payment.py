@@ -78,7 +78,8 @@ def confirm_payment():
     error = "not_possible"
     if to_be_added_flight in user_flights:
         error = "Flight already booked!"
-        return {"status" : "error"}
+        print(error)
+        return {"status" : "error-dup"}
     else:
         user_flights.append(to_be_added_flight)
         database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})

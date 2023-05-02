@@ -8,6 +8,7 @@ $(document).ready(function() {
                 $("#table-" + flight_id).hide();
                 $(".show-cancel-flight").show();
                 $(".show-cancel-flight p").text("You have cancelled the flight - " + flight_id);
+                $(window).scrollTop(0);
             });
         }
     });

@@ -66,6 +66,7 @@ def search_flights():
 
 @flights_bp.route("/add-flight", methods=['POST'])
 def add_flight():
+    print("reaced add_flight function")
     to_be_added_flight = request.form['flight_id']
     user_name = request.args.get("user_name")
     user_email = request.args.get("user_email")

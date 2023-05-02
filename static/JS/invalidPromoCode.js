@@ -4,6 +4,7 @@ $(document).ready(function(){
             if(response){
                 document.getElementById("status").style.display = "block";
                 document.getElementById("status").innerHTML = "Invalid Promo Code"
+                $(window).scrollTop(0);
             }
         });
     });
