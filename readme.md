@@ -37,6 +37,11 @@ In the login.html form, users enter their email and password which are checked a
 </p>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
 2. Collections used - Users, Bookings, Flights
 <div>
 <img src="./documentation_images/complex_query_2.png" alt="">
@@ -45,7 +50,23 @@ When the user selects the origin and destination locations, all available flight
 </p>
 </div>
 
+<br>
+<br>
+<br>
+<br>
 
+3. Collections used - Users, Bookings, Flights, discount (Bonus Complex Query)
+<div>
+<img src="./documentation_images/complex_query_3.png" alt="">
+<p>
+After selecting the origin and destination locations, all available flights are displayed in flight.html. Upon selecting a flight, the user is redirected to the payment page where, upon clicking "confirm," the system checks if the user has already booked the same flight. If yes, an error message is displayed. Otherwise, the flight ID is added to the user's booking list. Additionally, if the user enters a valid promo code, the price of the flight ticket is reduced based on the code entered. However, if an invalid promo code is entered, an error message is displayed.
+</p>
+</div>
+
+<br>
+<br>
+<br>
+<br>
 <hr>
 
 ### 1. Create virtual environment
