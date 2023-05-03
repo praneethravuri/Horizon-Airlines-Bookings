@@ -31,7 +31,10 @@ Horizon Airlines is a web application built with Flask and MongoDB, enabling use
 #### Complex Queries
 1. Collections used - Users, Flights, Bookings
 
-<img src="./documentation_images/complex_query_1.png" alt="">
+
+<p style="align-items: center;">
+    <img src="./documentation_images/complex_query_1.png" alt="">
+</p>
 
 <hr>
 
