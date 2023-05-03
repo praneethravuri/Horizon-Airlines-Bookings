@@ -69,6 +69,24 @@ After selecting the origin and destination locations, all available flights are 
 <br>
 <br>
 
+#### Website Screenshots
+
+Login            |  Homepage
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/login.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Search Flights          |  Payment
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/payment.png" alt="">
+
+Update / Delete Account         |  Cancel Flight
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/update_delete_account.png" alt="">  |  <img src="./documentation_images/delete_flight.png" alt="">
+
+From Locations List         |  To Locations List
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/fromLocation.png" alt="">  |  <img src="./documentation_images/toLocation.png" alt="">
+
 #### Conslusion
 
 In conclusion, this project is a fully functional web-based flight booking system that provides users with a convenient way to search and book flights. The system is designed with a user-friendly interface and includes features such as flight search, booking, and payment.
