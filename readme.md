@@ -1,3 +1,15 @@
+# INFS 740 Project
+
+### Team Members:
+* Praneeth Ravuri (G01369627)
+* Arishith Pakalapati (G01374702)
+
+
+### Project Description
+
+Horizon Airlines is a web application built with Flask and MongoDB, enabling users to easily book and manage flights. Users can view available flights, apply promo codes, and update their personal information, including email, name, and password. The site features a login authentication system and allows users to delete their account. The efficient booking system streamlines the process by only requiring payment information. In summary, Horizon Airlines offers a comprehensive airline management system with all essential features for an efficient booking experience.
+<hr>
+
 ### 1. Create virtual environment
 
 Delete ```env``` folder if it is already present in the project folder
