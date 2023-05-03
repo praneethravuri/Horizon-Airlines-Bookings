@@ -40,6 +40,9 @@ app.register_blueprint(payment_bp)
 from routes.signup import signup_bp
 app.register_blueprint(signup_bp)
 
+from routes.visualization import visualization_bp
+app.register_blueprint(visualization_bp)
+
 #from routes.login import 
 
 # Import and register other blueprints here

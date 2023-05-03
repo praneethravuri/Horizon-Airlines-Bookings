@@ -135,6 +135,6 @@ Run the command ```activate``` and go to the main project folder
 
 ```python app.py```
 
-#### Credentials, locations, promo codes
+#### 6. Credentials, locations, promo codes
 
 Credentials, locations, and promo codes can be found in the ```db_data``` folder. One can access them in the form of json or text files

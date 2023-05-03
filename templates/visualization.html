@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/visualization.css') }}">
+    <title>Horizon Airlines - Visualization</title>
+</head>
+<body>
+    {% include "nav-bar.html" %}
+
+    <div>
+        <p>A bar graph is created using the list of cities from where flights are departing, which shows the most busiest cities.</p>
+        <img src="{{ url_for('static', filename = 'images/fromLocation.png') }}" alt="" id="fromLocation">
+    </div>
+        
+    <div>
+        <p>A bar graph is generated using the list of cities to which flights are arriving, highlighting the most frequently visited cities.</p>
+        <img src="{{ url_for('static', filename = 'images/toLocation.png') }}" alt="" id="to_location">
+    </div>
+
+    <div>
+        <p>A node graph is created to represent the flight paths originating from various cities, which also displays the interconnected flights between two destinations.</p>
+        <img src="{{ url_for('static', filename = 'images/connected_flights.png') }}" alt="" id="connected">
+    </div>
+        
+</body>
+</html>

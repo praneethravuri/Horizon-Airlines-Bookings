@@ -7,6 +7,7 @@ from routes.login import login_bp
 from routes.account import account_bp
 from routes.payment import payment_bp
 from routes.signup import signup_bp
+from routes.visualization import visualization_bp
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = secrets.token_hex(16)
@@ -25,11 +26,17 @@ app.register_blueprint(login_bp)
 app.register_blueprint(account_bp)
 app.register_blueprint(payment_bp)
 app.register_blueprint(signup_bp)
+app.register_blueprint(visualization_bp)
 
 # Route to index.html when http://localhost:8080/ is accessed
 @app.route('/')
 def index():
     return render_template('login.html')
+
+
+@app.route("/visualization")
+def visualization():
+    return render_template("visualization.html")
     
 if __name__ == '__main__':
     app.run(debug=True, port = 8080)

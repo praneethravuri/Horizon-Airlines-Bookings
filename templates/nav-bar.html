@@ -5,6 +5,7 @@
             <li><a href="{{url_for('homepage.homepage')}}">Home</a></li>
             <li><a href="{{url_for('flights.search_flights', user_email = user_email, user_name = user_name)}}">Flights</a></li>
             <li><a href="{{url_for('account.account', user_email = user_email, user_name = user_name)}}">Account</a></li>
+            <li><a href="{{url_for('visualization.visualization')}}">Visualization</a></li>
             <li><a href="{{ url_for('login.logout')}}">Logout</a></li>
         </ul>
     </nav>
