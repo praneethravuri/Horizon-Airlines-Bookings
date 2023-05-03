@@ -2,7 +2,7 @@
 
 ### Team Members
 
-* Praneeth Ravuri (G01369627. pravuri@gmu.edu)
+* Praneeth Ravuri (G01369627, pravuri@gmu.edu)
 * Arishith Pakalapati (G01374702, apakalap@gmu.edu)
 
 ### Project Description
@@ -11,8 +11,8 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 
 #### Technologies
 
-* Frontend - Html, CSS, Javascript
-* Backend - Flask
+* Frontend - Html, CSS, Javascript, JQuery
+* Backend - Flask, Javascript, Jquery
 * Database - MongoDB
 * Visualization - Jupyter Notebook
 
