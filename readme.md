@@ -13,6 +13,7 @@ Horizon Airlines is a web application built with Flask and MongoDB, enabling use
 * Frontend - Html, CSS, Javascript
 * Backend - Flask
 * Database - MongoDB
+* Visualization - Jupyter Notebook
 
 #### Collections
 * Users
