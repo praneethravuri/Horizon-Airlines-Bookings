@@ -69,22 +69,28 @@ After selecting the origin and destination locations, all available flights are 
 <br>
 <hr>
 
-### 1. Create virtual environment
+#### Project Setup
+
+#### 1. Create virtual environment
 
 Delete ```env``` folder if it is already present in the project folder
 
 ```python -m venv env```
 
-### 2. Install necessary libraries
+#### 2. Install necessary libraries
 
 ```pip install flask pymongo jupyter matplotlib```
 
-### 3. Go to services and check if MongoDB is running
+#### 3. Go to services and check if MongoDB is running
 
-### 4. Initialize the MongoDB in Command Prompt
+#### 4. Initialize the MongoDB in Command Prompt
 
 ```mongod```
 
-### 5. In the virtual environment, run app.py
+#### 5. In the virtual environment, run app.py
 
 ```python app.py```
+
+#### Credentials, locations, promo codes
+
+Credentials, locations, and promo codes can be found in the ```db_data``` folder. One can access them in the form of json or text files
