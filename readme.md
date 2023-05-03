@@ -123,7 +123,7 @@ Run the command ```activate``` and go to the main project folder
 
 #### 2. Install necessary libraries
 
-```pip install flask pymongo jupyter matplotlib```
+```pip install flask pymongo matplotlib networkx```
 
 #### 3. Go to services and check if MongoDB is running
 
