@@ -69,13 +69,17 @@ After selecting the origin and destination locations, all available flights are 
 <br>
 <hr>
 
-#### Project Setup
+### Project Setup
 
-#### 1. Create virtual environment
+#### 1. Create virtual environment (Windows)
 
 Delete ```env``` folder if it is already present in the project folder
 
 ```python -m venv env```
+
+Navigate to ```env/Scripts```
+
+Run the command ```activate``` and go to the main project folder
 
 #### 2. Install necessary libraries
 
