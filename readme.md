@@ -30,11 +30,15 @@ Horizon Airlines is a web application built with Flask and MongoDB, enabling use
 
 #### Complex Queries
 1. Collections used - Users, Flights, Bookings
-
-
-<p style="align-items: center;">
-    <img src="./documentation_images/complex_query_1.png" alt="">
+<div>
+<img src="./documentation_images/complex_query_1.png" alt="">
+<p>
+In the login.html form, users enter their email and password which are checked against the corresponding records in the MongoDB users collection. If the credentials are correct, the bookings for that email are retrieved. If the user_flights list is empty, "No bookings found" is displayed on the homepage.html. Otherwise, for each flight in the user_flights list, the flight ID is used to search the flights collection in MongoDB and all information about that flight is displayed on the homepage.html.
 </p>
+</div>
+
+
+
 
 <hr>
 
