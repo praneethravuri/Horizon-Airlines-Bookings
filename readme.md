@@ -8,6 +8,31 @@
 ### Project Description
 
 Horizon Airlines is a web application built with Flask and MongoDB, enabling users to easily book and manage flights. Users can view available flights, apply promo codes, and update their personal information, including email, name, and password. The site features a login authentication system and allows users to delete their account. The efficient booking system streamlines the process by only requiring payment information. In summary, Horizon Airlines offers a comprehensive airline management system with all essential features for an efficient booking experience.
+
+#### Technologies
+* Frontend - Html, CSS, Javascript
+* Backend - Flask
+* Database - MongoDB
+
+#### Collections
+* Users
+* Flights
+* Bookings
+* Discount
+
+#### Basic Queries (CRUD Operations)
+* Create a new account
+* Update name, email, and password of the user
+* Cancel flights
+* Check duplicate flight booking
+* Check pre-existing users in the database
+* Delete account of the user
+
+#### Complex Queries
+1. Collections used - Users, Flights, Bookings
+
+<img src="./documentation_images/complex_query_1.png" alt="">
+
 <hr>
 
 ### 1. Create virtual environment
