@@ -68,6 +68,13 @@ After selecting the origin and destination locations, all available flights are 
 <br>
 <br>
 <br>
+
+#### Conslusion
+
+In conclusion, this project is a fully functional web-based flight booking system that provides users with a convenient way to search and book flights. The system is designed with a user-friendly interface and includes features such as flight search, booking, and payment.
+
+Overall, this project serves as a practical example of how web-based applications can be designed to provide a seamless and personalized user experience, making the booking process easier and more efficient for users.
+
 <hr>
 
 ### Project Setup
