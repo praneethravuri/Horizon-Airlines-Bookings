@@ -15,10 +15,13 @@ class Database:
             cls._instance.bookings = cls._instance.db['bookings']
         return cls._instance
 
+# database instance
 database = Database()
 
+# homepage blueprint to be used in app.py
 homepage_bp = Blueprint('homepage', __name__)
 
+# display arrival/departure time and date in the correct format
 def split_time(time_):
     time_ = time_.split("T")
     return time_[0] + " | " + time_[1][0:-1]
@@ -27,10 +30,15 @@ def split_time(time_):
 def homepage():
     user_name = request.args.get("user_name")
     user_email = request.args.get("user_email")
+
+    print(f"\n--{user_email} has accessed the homepage.html\n")
+    print(f"\n--{user_name} is the username of {user_email}\n")
+
     user_flights = session.get("user_flights") or []
     user_flights_dict = {}
     has_bookings = False
     if user_flights:
+        
         flight_details = database.flights.find({"flight_id": {"$in": user_flights}})
         for flight in flight_details:
             user_flights_dict[flight["flight_id"]] = [
@@ -46,6 +54,11 @@ def homepage():
             ]
         has_bookings = True
 
+    if has_bookings == False:
+        print(f"\n{user_email} does not have any bookings\n")
+    else:
+        print(f"\n{user_email} has bookings\n")
+        print(f"\n{user_email} has the following bookings {user_flights_dict}\n")
     return render_template("homepage.html", user_name=user_name, user_flights_dict=user_flights_dict, has_bookings=has_bookings, user_email = user_email)
 
 @homepage_bp.route('/delete-flight', methods=['POST'])
@@ -53,9 +66,13 @@ def delete_flight():
     to_be_deleted_flight = request.form['flight_id']
     user_name = request.args.get("user_name")
     user_email = session.get("user_email")
+
+    print(f"\n--{user_email} wants to cancel the flight - {to_be_deleted_flight}\n")
+    print(f"\n--Deleting Flight: {to_be_deleted_flight}\n")
     user = database.bookings.find_one({"userEmail": user_email})
     user_flights = user["userFlights"]
     updated_flights = [f for f in user_flights if f != to_be_deleted_flight]
     database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': updated_flights}})
+    print(f"\n--Deleted flight: {to_be_deleted_flight} from {user_email}'s bookings\n")
     
     return redirect(url_for('homepage.homepage', user_name = user_name, user_email = user_email))

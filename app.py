@@ -18,7 +18,7 @@ users = db['users']
 flights = db["flights"]
 bookings = db["bookings"]
 
-# Register the homepage blueprint
+# Register the pages blueprint
 app.register_blueprint(homepage_bp)
 app.register_blueprint(flights_bp)
 app.register_blueprint(login_bp)
@@ -26,9 +26,10 @@ app.register_blueprint(account_bp)
 app.register_blueprint(payment_bp)
 app.register_blueprint(signup_bp)
 
+# Route to index.html when http://localhost:8080/ is accessed
 @app.route('/')
 def index():
     return render_template('login.html')
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port = 8080)

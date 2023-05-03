@@ -64,26 +64,4 @@ def search_flights():
 
     return render_template("flights.html", from_locations = from_locations, to_locations = to_locations, submit_clicked = submit_clicked, all_flights = all_flights, search_message = search_message, user_name = user_name, user_email = user_email, status = status, success = success)
 
-@flights_bp.route("/add-flight", methods=['POST'])
-def add_flight():
-    print("reaced add_flight function")
-    to_be_added_flight = request.form['flight_id']
-    user_name = request.args.get("user_name")
-    user_email = request.args.get("user_email")
-    user = database.bookings.find_one({"userEmail" : user_email})
-    user_flights = user["userFlights"]
-    error = "not_possible"
-    if to_be_added_flight in user_flights:
-        error = "Flight already booked!"
-        print(error)
-        return {"error": "booked"}
-    else:
-        #user_flights.append(to_be_added_flight)
-        #database.bookings.update_one({'userEmail': user_email}, {'$set': {'userFlights': user_flights}})
-        #print("Added flight details to the user's bookings")
-        print('comes here ')
-        return redirect("/payment.html", user_name = user_name, user_email = user_email)
-        # return {"flight_id" : to_be_added_flight}
 
-
-    return redirect(url_for('flights.search_flights'))

@@ -47,15 +47,15 @@
                 <form method="POST" action="{{ url_for('payment.validate_promo_code') }}">
                     <div class="credit-card-number add-pad align-left">
                         <label for="">Credit Card Number: </label>
-                        <input type="text">
+                        <input type="text" required>
                     </div>
                     <div class="select-expiry add-pad align-left">
                         <label for="">Expiration Date: </label>
-                        <input type="text" name="" id="" placeholder="MM/YY">
+                        <input type="text" name="" id="" placeholder="MM/YY" required>
                     </div>
                     <div class="security-code add-pad align-left">
                         <label for="">Security Code: </label>
-                        <input type="password" placeholder="XXX">
+                        <input type="password" placeholder="XXX" required>
                     </div>
                     <div class="promocode add-pad align-left">
                         <label for="">Promo Code: </label>
