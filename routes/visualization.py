@@ -58,10 +58,8 @@ def visualization():
     to_locations_dict = dict(sorted(to_locations_dict.items(), key=lambda item: item[1], reverse=True))
     fig, ax = plt.subplots(figsize=(12, 6))
 
-    # Create a horizontal bar chart
     ax.barh(list(to_locations_dict.keys()), list(to_locations_dict.values()))
 
-    # Add title and labels
     ax.set_title('Number of Flights to Different Locations')
     ax.set_xlabel('Number of Flights')
     ax.set_ylabel('Location')
@@ -85,13 +83,10 @@ def visualization():
 
     G = nx.DiGraph()
 
-    # Define the edges
     edges = source_destination
 
-    # Add the edges to the graph
     G.add_edges_from(edges)
 
-    # Define the position of each node using a layout algorithm
     pos = nx.spring_layout(G)
 
     # Draw the nodes and edges
