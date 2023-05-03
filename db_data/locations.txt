@@ -1,0 +1,80 @@
+Abu Dhabi --> New Delhi
+Abu Dhabi --> New York
+Abu Dhabi --> Toronto
+Amsterdam --> Mexico City
+Amsterdam --> New Delhi
+Amsterdam --> Rio de Janeiro
+Amsterdam --> São Paulo
+Atlanta --> Amsterdam
+Atlanta --> Dubai
+Atlanta --> San Francisco
+Atlanta --> Dubai
+Atlanta --> Dubai
+Atlanta --> Dubai
+Berlin --> Dubai
+Chicago --> London
+Chicago --> Sydney
+Chicago --> London
+Chicago --> Shanghai
+Chicago --> London
+Chicago --> Shanghai
+Dallas --> London
+Dallas --> Seattle
+Delhi --> Beijing
+Dubai --> Los Angeles
+Dubai --> New Delhi
+Dubai --> New York
+Dubai --> San Francisco
+Dublin --> Barcelona
+Dublin --> Barcelona
+Doha --> Sydney
+Doha --> Miami
+Doha --> Los Angeles
+Doha --> Melbourne
+Frankfurt --> Chicago
+Frankfurt --> Tokyo
+Frankfurt --> Mexico City
+Frankfurt --> Rio de Janeiro
+Hong Kong --> Los Angeles
+Hong Kong --> Sydney
+Hong Kong --> New York
+Istanbul --> New Delhi
+Istanbul --> Chicago
+Istanbul --> San Francisco
+Istanbul --> Los Angeles
+Johannesburg --> London
+London --> New York
+London --> Sydney
+London --> New York
+London --> Cape Town
+London --> Tokyo
+London --> Tokyo
+Melbourne --> Auckland
+Miami --> London
+Moscow --> Bangkok
+Moscow --> Beijing
+Mumbai --> London
+Mumbai --> Sydney
+New York --> Shanghai
+New York --> Los Angeles
+New York --> Dubai
+Paris --> Tokyo
+Paris --> Tokyo
+Paris --> New York
+Paris --> Buenos Aires
+Paris --> Singapore
+Rome --> Mexico City
+Rome --> Miami
+Seoul --> Paris
+Sydney --> New York
+Sydney --> Vancouver
+Sydney --> Auckland
+Sydney --> Tokyo
+Tokyo --> Honolulu
+Tokyo --> Los Angeles
+Tokyo --> San Francisco
+Tokyo --> London
+Tokyo --> Melbourne
+Toronto --> Mexico City
+Toronto --> Rio de Janeiro
+Zurich --> Rio de Janeiro
