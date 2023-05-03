@@ -1,27 +1,30 @@
 # INFS 740 Project
 
-### Team Members:
+### Team Members
+
 * Praneeth Ravuri (G01369627)
 * Arishith Pakalapati (G01374702)
-
 
 ### Project Description
 
 Horizon Airlines is a web application built with Flask and MongoDB, enabling users to easily book and manage flights. Users can view available flights, apply promo codes, and update their personal information, including email, name, and password. The site features a login authentication system and allows users to delete their account. The efficient booking system streamlines the process by only requiring payment information. In summary, Horizon Airlines offers a comprehensive airline management system with all essential features for an efficient booking experience.
 
 #### Technologies
+
 * Frontend - Html, CSS, Javascript
 * Backend - Flask
 * Database - MongoDB
 * Visualization - Jupyter Notebook
 
 #### Collections
+
 * Users
 * Flights
 * Bookings
 * Discount
 
 #### Basic Queries (CRUD Operations)
+
 * Create a new account
 * Update name, email, and password of the user
 * Cancel flights
@@ -30,7 +33,9 @@ Horizon Airlines is a web application built with Flask and MongoDB, enabling use
 * Delete account of the user
 
 #### Complex Queries
+
 1. Collections used - Users, Flights, Bookings
+
 <div>
 <img src="./documentation_images/complex_query_1.png" alt="">
 <p>
@@ -44,6 +49,7 @@ In the login.html form, users enter their email and password which are checked a
 <br>
 
 2. Collections used - Users, Bookings, Flights
+
 <div>
 <img src="./documentation_images/complex_query_2.png" alt="">
 <p>
@@ -57,6 +63,7 @@ When the user selects the origin and destination locations, all available flight
 <br>
 
 3. Collections used - Users, Bookings, Flights, discount (Bonus Complex Query)
+
 <div>
 <img src="./documentation_images/complex_query_3.png" alt="">
 <p>
@@ -83,9 +90,16 @@ Update / Delete Account         |  Cancel Flight
 :-------------------------:|:-------------------------:
 <img src="./documentation_images/update_delete_account.png" alt="">  |  <img src="./documentation_images/delete_flight.png" alt="">
 
-From Locations List         |  To Locations List
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/fromLocation.png" alt="">  |  <img src="./documentation_images/toLocation.png" alt="">
+#### Visualization
+
+1. A bar graph is created using the list of cities from where flights are departing, which shows the most busiest cities.
+<img src="./documentation_images/fromLocation.png" alt="">
+
+2. A bar graph is generated using the list of cities to which flights are arriving, highlighting the most frequently visited cities.
+<img src="./documentation_images/toLocation.png" alt="">
+
+3. A node graph is created to represent the flight paths originating from various cities, which also displays the interconnected flights between two destinations.
+<img src="./documentation_images/connected_airports.png" alt="">
 
 #### Conslusion
 
