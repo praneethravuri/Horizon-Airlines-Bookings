@@ -49,13 +49,13 @@ In the login.html form, users enter their email and password which are checked a
 </p>
 </div>
 
-Login.html            |  Login.py
+User Authentication         |  Login.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/login_py.png" alt="">
 
-Homepage.html           |  Homepage.py
+Display User Bookings          |  Homepage.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/homepage_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/homepage_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
 
 <br>
 <br>
@@ -71,17 +71,17 @@ When the user selects the origin and destination locations, all available flight
 </p>
 </div>
 
-Login.html          |  Homepage.py
+User Authentication       |  Homepage.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
 
-Flights.html         |  Homepage.py
+Display Searched Flights        |  Flights.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/display_flights_py.png" alt="">
 
-Payment.html         |  Homepage.py
+Confirm Flight Booking        |  Payment.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/confirm_flight.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/confirm_flight.png" alt="">  |  <img src="./documentation_images/confirm_flight_py.png" alt="">
 
 <br>
 <br>
@@ -97,17 +97,17 @@ After selecting the origin and destination locations, all available flights are 
 </p>
 </div>
 
-Login.html          |  Homepage.py
+User Authentication          |  Homepage.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
 
-Flights.html         |  Homepage.py
+Display Searched Flights     |  Flights.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/display_flights_py.png" alt="">
 
-Payment.html         |  Homepage.py
+Validate Promo Code        | Payment.py
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/valid_promo.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/valid_promo.png" alt="">  |  <img src="./documentation_images/valid_promo_py.png" alt="">
 
 <br>
 <br>
@@ -118,7 +118,7 @@ Payment.html         |  Homepage.py
 
 Login            |  Homepage
 :-------------------------:|:-------------------------:
-<img src="./documentation_images/login.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+<img src="./documentation_images/login.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
 
 Search Flights          |  Payment
 :-------------------------:|:-------------------------:
