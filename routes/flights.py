@@ -63,8 +63,3 @@ def search_flights():
         all_flights.append(flight_details)
 
     return render_template("flights.html", from_locations = from_locations, to_locations = to_locations, submit_clicked = submit_clicked, all_flights = all_flights, search_message = search_message, user_name = user_name, user_email = user_email, status = status, success = success)
-
-
-@flights_bp.route("/change-flights", methods=["GET", "POST"])
-def change_flights():
-    return render_template("flights.html")

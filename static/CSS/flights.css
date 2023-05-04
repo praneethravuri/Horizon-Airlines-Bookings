@@ -85,3 +85,70 @@ section{
     color: white;
     font-weight: bold;
 }
+
+section{
+    margin: 20px;
+}
+
+.admin-functions{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    display: block;
+}
+
+.admin-options{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.form-control{
+    padding: 20px;
+    text-align: left;
+}
+
+form label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+  }
+
+  form input[type="text"] {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+  }
+
+.admin-functions .btn{
+    padding: 10px;
+    border: 2px solid whitesmoke;
+    background-color: none;
+    border-radius: 5px;
+    margin: 1px;
+    color: white;
+    font-weight: bold;
+}
+
+.admin-add-flight{
+    background-color: green;
+}
+
+.admin-delete-flight{
+    background-color: red;
+}
+
+.admin-update-flight{
+    background-color: blue;
+}
+
+.form-control .btn{
+    background-color: blue;
+}
+
+.form-control{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+}
