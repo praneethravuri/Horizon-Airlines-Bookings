@@ -114,19 +114,8 @@ Validate Promo Code        | Payment.py
 <br>
 <br>
 
-#### Website Screenshots
+#### CRUD Operations Screenshots
 
-Login            |  Homepage
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/login.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
-
-Search Flights          |  Payment
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/payment.png" alt="">
-
-Update / Delete Account         |  Cancel Flight
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/update_delete_account.png" alt="">  |  <img src="./documentation_images/delete_flight.png" alt="">
 
 #### Visualization
 
