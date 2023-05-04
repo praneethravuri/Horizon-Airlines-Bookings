@@ -14,7 +14,6 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 * Frontend - Html, CSS, Javascript, JQuery
 * Backend - Flask, Javascript, Jquery
 * Database - MongoDB
-* Visualization - Jupyter Notebook
 
 #### Collections
 
@@ -31,6 +30,13 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 * Check duplicate flight booking
 * Check pre-existing users in the database
 * Delete account of the user
+* Delete flights from database
+* Add flights to database
+* Update details of a flight in the database
+
+Adding, deleting, and updating flight details can only be done by the admin. If a user with the email, “admin@gmail.com”, that user has the power to do the above functions
+
+
 
 #### Complex Queries
 
@@ -42,6 +48,14 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 In the login.html form, users enter their email and password which are checked against the corresponding records in the MongoDB users collection. If the credentials are correct, the bookings for that email are retrieved. If the user_flights list is empty, "No bookings found" is displayed on the homepage.html. Otherwise, for each flight in the user_flights list, the flight ID is used to search the flights collection in MongoDB and all information about that flight is displayed on the homepage.html.
 </p>
 </div>
+
+Login.html            |  Login.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Homepage.html           |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/homepage_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
 
 <br>
 <br>
@@ -57,6 +71,18 @@ When the user selects the origin and destination locations, all available flight
 </p>
 </div>
 
+Login.html          |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Flights.html         |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Payment.html         |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/confirm_flight.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
 <br>
 <br>
 <br>
@@ -70,6 +96,18 @@ When the user selects the origin and destination locations, all available flight
 After selecting the origin and destination locations, all available flights are displayed in flight.html. Upon selecting a flight, the user is redirected to the payment page where, upon clicking "confirm," the system checks if the user has already booked the same flight. If yes, an error message is displayed. Otherwise, the flight ID is added to the user's booking list. Additionally, if the user enters a valid promo code, the price of the flight ticket is reduced based on the code entered. However, if an invalid promo code is entered, an error message is displayed.
 </p>
 </div>
+
+Login.html          |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Flights.html         |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
+
+Payment.html         |  Homepage.py
+:-------------------------:|:-------------------------:
+<img src="./documentation_images/valid_promo.png" alt="">  |  <img src="./documentation_images/homepage.png" alt="">
 
 <br>
 <br>
