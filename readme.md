@@ -30,13 +30,6 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 * Check duplicate flight booking
 * Check pre-existing users in the database
 * Delete account of the user
-* Delete flights from database
-* Add flights to database
-* Update details of a flight in the database
-
-Adding, deleting, and updating flight details can only be done by the admin. If a user with the email, “admin@gmail.com”, that user has the power to do the above functions
-
-
 
 #### Complex Queries
 
@@ -113,9 +106,6 @@ Validate Promo Code        | Payment.py
 <br>
 <br>
 <br>
-
-#### CRUD Operations Screenshots
-
 
 #### Visualization
 
