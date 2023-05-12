@@ -1,10 +1,5 @@
 # INFS 740 Project
 
-### Team Members
-
-* Praneeth Ravuri (G01369627, pravuri@gmu.edu)
-* Arishith Pakalapati (G01374702, apakalap@gmu.edu)
-
 ### Project Description
 
 Horizon Airlines Bookings is a web application built with Flask and MongoDB, enabling users to easily book and manage flights. Users can view available flights, apply promo codes, and update their personal information, including email, name, and password. The site features a login authentication system and allows users to delete their account. The efficient booking system streamlines the process by only requiring payment information. In summary, Horizon Airlines Bookings offers a comprehensive airline management system with all essential features for an efficient booking experience.
@@ -104,8 +99,7 @@ Validate Promo Code        | Payment.py
 
 <br>
 <br>
-<br>
-<br>
+
 
 #### Visualization
 
