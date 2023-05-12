@@ -1,4 +1,8 @@
-# INFS 740 Project
+# INFS 740 Project (Spring 2023) - Horizon Airlines Bookings
+## George Mason University - MSCS
+
+<br>
+<br>
 
 ### Project Description
 
