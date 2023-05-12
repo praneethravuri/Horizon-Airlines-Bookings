@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Search Flights - Horizon Airlines Bookings</title>
 </head>
+
 <body>
 
     {% include "nav-bar.html" %}
@@ -44,7 +46,7 @@
                         <option value="{{loc}}">{{loc}}</option>
                         {% endfor %}
                     </select>
-                
+
                     <label for="to_locations">To: </label>
                     <select name="to_location" id="to_locations">
                         <option value="">None</option>
@@ -52,7 +54,7 @@
                         <option value="{{loc}}">{{loc}}</option>
                         {% endfor %}
                     </select>
-                
+
                     <button type="submit">Search Flights</button>
                 </form>
             </div>
@@ -92,17 +94,18 @@
                         <td>{{f["duration"]}}</td>
                     </tr>
                     <tr>
-                        <td class="add-bold">Price:  </td>
+                        <td class="add-bold">Price: </td>
                         <td>${{f["price"]}}</td>
                     </tr>
                     <tr>
                         <td class="add-bold"></td>
                         <td>
                             <a href="{{ url_for('payment.payment', flight_id=f['flight_id'], price = f['price'])}}">
-                                <button class="add-flight-btn" id="{{ f['flight_id'] }}">Book Flight - {{ f['flight_id'] }}</button>
+                                <button class="add-flight-btn" id="{{ f['flight_id'] }}">Book Flight - {{ f['flight_id']
+                                    }}</button>
                             </a>
-                            
-                            
+
+
                         </td>
                     </tr>
                 </table>
@@ -113,107 +116,11 @@
                 <h1>No flights available</h1>
             </div>
             {% endif %}
-            </div>
+        </div>
         </div>
     </section>
 
-        <section class="admin-functions">
-            {% if user_email == "admin@gmail.com" %}
-            <div class="admin-options">
-                <button class="admin-add-flight btn">Add New Flight</button>
-                <button class="admin-update-flight btn">Update Flight</button>
-                <button class="admin-delete-flight btn">Delete Flight</button>
-            </div>
-
-            <div class="add-form" style="display: none;">
-                <h1>Add Flight</h1>
-                <form class="form-control">
-                    <label for="flight_id">Flight ID:</label>
-                    <input type="text" id="flight_id" name="flight_id"><br>
-                  
-                    <label for="airline_name">Airline Name:</label>
-                    <input type="text" id="airline_name" name="airline_name"><br>
-                  
-                    <label for="origin">Origin:</label>
-                    <input type="text" id="origin" name="origin"><br>
-                  
-                    <label for="origin_airport_code">Origin Airport Code:</label>
-                    <input type="text" id="origin_airport_code" name="origin_airport_code"><br>
-                  
-                    <label for="destination">Destination:</label>
-                    <input type="text" id="destination" name="destination"><br>
-                  
-                    <label for="destination_airport_code">Destination Airport Code:</label>
-                    <input type="text" id="destination_airport_code" name="destination_airport_code"><br>
-                  
-                    <label for="departure_time">Departure Time:</label>
-                    <input type="text" id="departure_time" name="departure_time"><br>
-                  
-                    <label for="arrival_time">Arrival Time:</label>
-                    <input type="text" id="arrival_time" name="arrival_time"><br>
-                  
-                    <label for="duration">Duration:</label>
-                    <input type="text" id="duration" name="duration"><br>
-                  
-                    <label for="price">Price:</label>
-                    <input type="text" id="price" name="price"><br>
-                    
-                    <input type="submit" value="Submit" class="btn">
-                  </form>
-                  
-            </div>
-
-            <div class="update-form" style="display: none;">
-                <h1>Update Flight</h1>
-                <form class="form-control">
-                    <label for="flight_id">Flight ID:</label>
-                    <input type="text" id="flight_id" name="flight_id"><br>
-                  
-                    <label for="airline_name">Airline Name:</label>
-                    <input type="text" id="airline_name" name="airline_name"><br>
-                  
-                    <label for="origin">Origin:</label>
-                    <input type="text" id="origin" name="origin"><br>
-                  
-                    <label for="origin_airport_code">Origin Airport Code:</label>
-                    <input type="text" id="origin_airport_code" name="origin_airport_code"><br>
-                  
-                    <label for="destination">Destination:</label>
-                    <input type="text" id="destination" name="destination"><br>
-                  
-                    <label for="destination_airport_code">Destination Airport Code:</label>
-                    <input type="text" id="destination_airport_code" name="destination_airport_code"><br>
-                  
-                    <label for="departure_time">Departure Time:</label>
-                    <input type="text" id="departure_time" name="departure_time"><br>
-                  
-                    <label for="arrival_time">Arrival Time:</label>
-                    <input type="text" id="arrival_time" name="arrival_time"><br>
-                  
-                    <label for="duration">Duration:</label>
-                    <input type="text" id="duration" name="duration"><br>
-                  
-                    <label for="price">Price:</label>
-                    <input type="text" id="price" name="price"><br>
-                    
-                    <input type="submit" value="Submit" class="btn">
-                  </form>
-            </div>
-
-            <div class="delete-form" style="display: none;">
-                <h1>Delete Flight</h1>
-                <form class="form-control">
-                    <label for="flight_id">Flight ID:</label>
-                    <input type="text" id="flight_id" name="flight_id"><br>
-                    <input type="submit" value="Submit" class="btn">
-                  </form>
-            </div>
-
-            {% endif %}
-
-        </section>
-
-        <script src="../static/JS/addFlight.js"></script>
-        <script src="../static/JS/admin.js"></script>
+    <script src="../static/JS/addFlight.js"></script>
 </body>
+
 </html>
