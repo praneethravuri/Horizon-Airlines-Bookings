@@ -108,13 +108,15 @@ Validate Promo Code        | Payment.py
 #### Visualization
 
 1. A bar graph is created using the list of cities from where flights are departing, which shows the most busiest cities.
-<img src="./documentation_images/fromLocation.png" alt="">
+<img src="./static/images/fromLocation.png" alt="">
 
 2. A bar graph is generated using the list of cities to which flights are arriving, highlighting the most frequently visited cities.
-<img src="./documentation_images/toLocation.png" alt="">
+<img src="./static/images/toLocation.png" alt="">
 
 3. A node graph is created to represent the flight paths originating from various cities, which also displays the interconnected flights between two destinations.
-<img src="./documentation_images/connected_airports.png" alt="">
+<img src="./static/images/connected_flights.png" alt="">
+
+All the visualizations are generated dynamically by ```visualization.py```
 
 #### Conslusion
 
