@@ -1,8 +1,17 @@
 # INFS 740 Project (Spring 2023) - Horizon Airlines Bookings
+
 ## George Mason University - MSCS
 
-<br>
-<br>
+
+### Project Installation (Docker)
+
+1. Pulling the Docker Image
+
+`docker pull praneeth2510/horizon-airlines-bookings`
+
+2. Running the application
+
+```docker run -p 8080:8080 praneeth2510/horizon-airlines-bookings```
 
 ### Project Description
 
@@ -10,25 +19,25 @@ Horizon Airlines Bookings is a web application built with Flask and MongoDB, ena
 
 #### Technologies
 
-* Frontend - Html, CSS, Javascript, JQuery
-* Backend - Flask, Javascript, Jquery
-* Database - MongoDB
+-   Frontend - Html, CSS, Javascript, JQuery
+-   Backend - Flask, Javascript, Jquery
+-   Database - MongoDB
 
 #### Collections
 
-* Users
-* Flights
-* Bookings
-* Discount
+-   Users
+-   Flights
+-   Bookings
+-   Discount
 
 #### Basic Queries (CRUD Operations)
 
-* Create a new account
-* Update name, email, and password of the user
-* Cancel flights
-* Check duplicate flight booking
-* Check pre-existing users in the database
-* Delete account of the user
+-   Create a new account
+-   Update name, email, and password of the user
+-   Cancel flights
+-   Check duplicate flight booking
+-   Check pre-existing users in the database
+-   Delete account of the user
 
 #### Complex Queries
 
@@ -41,13 +50,13 @@ In the login.html form, users enter their email and password which are checked a
 </p>
 </div>
 
-User Authentication         |  Login.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/login_py.png" alt="">
+|                   User Authentication                    |                        Login.py                        |
+| :------------------------------------------------------: | :----------------------------------------------------: |
+| <img src="./documentation_images/login_html.png" alt=""> | <img src="./documentation_images/login_py.png" alt=""> |
 
-Display User Bookings          |  Homepage.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/homepage_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
+|                    Display User Bookings                    |                        Homepage.py                        |
+| :---------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="./documentation_images/homepage_html.png" alt=""> | <img src="./documentation_images/homepage_py.png" alt=""> |
 
 <br>
 <br>
@@ -63,17 +72,17 @@ When the user selects the origin and destination locations, all available flight
 </p>
 </div>
 
-User Authentication       |  Homepage.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
+|                   User Authentication                    |                        Homepage.py                        |
+| :------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="./documentation_images/login_html.png" alt=""> | <img src="./documentation_images/homepage_py.png" alt=""> |
 
-Display Searched Flights        |  Flights.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/display_flights_py.png" alt="">
+|                   Display Searched Flights                    |                            Flights.py                            |
+| :-----------------------------------------------------------: | :--------------------------------------------------------------: |
+| <img src="./documentation_images/display_flights.png" alt=""> | <img src="./documentation_images/display_flights_py.png" alt=""> |
 
-Confirm Flight Booking        |  Payment.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/confirm_flight.png" alt="">  |  <img src="./documentation_images/confirm_flight_py.png" alt="">
+|                    Confirm Flight Booking                    |                           Payment.py                            |
+| :----------------------------------------------------------: | :-------------------------------------------------------------: |
+| <img src="./documentation_images/confirm_flight.png" alt=""> | <img src="./documentation_images/confirm_flight_py.png" alt=""> |
 
 <br>
 <br>
@@ -89,34 +98,33 @@ After selecting the origin and destination locations, all available flights are 
 </p>
 </div>
 
-User Authentication          |  Homepage.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/login_html.png" alt="">  |  <img src="./documentation_images/homepage_py.png" alt="">
+|                   User Authentication                    |                        Homepage.py                        |
+| :------------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="./documentation_images/login_html.png" alt=""> | <img src="./documentation_images/homepage_py.png" alt=""> |
 
-Display Searched Flights     |  Flights.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/display_flights.png" alt="">  |  <img src="./documentation_images/display_flights_py.png" alt="">
+|                   Display Searched Flights                    |                            Flights.py                            |
+| :-----------------------------------------------------------: | :--------------------------------------------------------------: |
+| <img src="./documentation_images/display_flights.png" alt=""> | <img src="./documentation_images/display_flights_py.png" alt=""> |
 
-Validate Promo Code        | Payment.py
-:-------------------------:|:-------------------------:
-<img src="./documentation_images/valid_promo.png" alt="">  |  <img src="./documentation_images/valid_promo_py.png" alt="">
+|                    Validate Promo Code                    |                          Payment.py                          |
+| :-------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="./documentation_images/valid_promo.png" alt=""> | <img src="./documentation_images/valid_promo_py.png" alt=""> |
 
 <br>
 <br>
-
 
 #### Visualization
 
 1. A bar graph is created using the list of cities from where flights are departing, which shows the most busiest cities.
-<img src="./static/images/fromLocation.png" alt="">
+   <img src="./static/images/fromLocation.png" alt="">
 
 2. A bar graph is generated using the list of cities to which flights are arriving, highlighting the most frequently visited cities.
-<img src="./static/images/toLocation.png" alt="">
+   <img src="./static/images/toLocation.png" alt="">
 
 3. A node graph is created to represent the flight paths originating from various cities, which also displays the interconnected flights between two destinations.
-<img src="./static/images/connected_flights.png" alt="">
+   <img src="./static/images/connected_flights.png" alt="">
 
-All the visualizations are generated dynamically by ```visualization.py```
+All the visualizations are generated dynamically by `visualization.py`
 
 #### Conslusion
 
@@ -130,28 +138,28 @@ Overall, this project serves as a practical example of how web-based application
 
 #### 1. Create virtual environment (Windows)
 
-Delete ```env``` folder if it is already present in the project folder
+Delete `env` folder if it is already present in the project folder
 
-```python -m venv env```
+`python -m venv env`
 
-Navigate to ```env/Scripts```
+Navigate to `env/Scripts`
 
-Run the command ```activate``` and go to the main project folder
+Run the command `activate` and go to the main project folder
 
 #### 2. Install necessary libraries
 
-```pip install flask pymongo matplotlib networkx```
+`pip install flask pymongo matplotlib networkx`
 
 #### 3. Go to services and check if MongoDB is running
 
 #### 4. Initialize the MongoDB in Command Prompt
 
-```mongod```
+`mongod`
 
 #### 5. In the virtual environment, run app.py
 
-```python app.py```
+`python app.py`
 
 #### 6. Credentials, locations, promo codes
 
-Credentials, locations, and promo codes can be found in the ```db_data``` folder. One can access them in the form of json or text files
+Credentials, locations, and promo codes can be found in the `db_data` folder. One can access them in the form of json or text files
